@@ -11,7 +11,7 @@ header {
     display: inline-block;
 }
 
-h1, h2 {font-family:oswald; sans-serif;
+h1, h2 {font-family:oswald, sans-serif;
        text-transform:uppercase; 
        letter-spacing:2.5px;
        color:#252525;
@@ -53,17 +53,33 @@ h1, h2 {font-family:oswald; sans-serif;
     font-weight: 600;
 }
 
+/* Sections  */
+.services {
+    background-color: rgb(255, 255, 255);
+}
+
+.reviews {
+    background-color: #ffffff;
+}
+
+
+.gcse {
+    background-color: rgba(148, 233, 193, 0.74);
+    margin: 10px;
+}
+
+.alevel {
+    background-color: rgba(153, 186, 218, 0.842);
+    margin: 10px;
+}
 
 /* Footer  */
 footer {
     bottom: 0;
     width: 100%;
-
     background-color: rgb(181, 223, 126);
-
     min-height: 65px;
     margin: 0;
-
 }
 
 .social-network {
