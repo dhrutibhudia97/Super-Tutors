@@ -117,7 +117,7 @@ h1, h2 {font-family:oswald, sans-serif;
 }
 
 .review-title {
-    float: right;
+    font-weight: 500;
 }
 
 .review {
@@ -160,9 +160,14 @@ h1, h2 {font-family:oswald, sans-serif;
 }
 
 
+.contact {
+    background-color: rgb(204, 238, 203);
+}
 
 
-
+td {
+    text-align: right;
+}
 
 /* Footer  */
 footer {
