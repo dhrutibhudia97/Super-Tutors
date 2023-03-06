@@ -2,7 +2,7 @@ body {
     font-family:lato, sans-serif;
     font-weight:300;
     color:#141414;
-    margin: 15px;
+    margin: 5px 10px;
 }
 /* headings and logos */
 
@@ -21,6 +21,8 @@ h1, h2 {font-family:oswald, sans-serif;
     float:left;
     font-size:210%;
     margin:20px 20px;
+    color: rgb(38, 151, 44);
+    font-weight: 700;
 }
 /* navigation links */
 
@@ -53,25 +55,114 @@ h1, h2 {font-family:oswald, sans-serif;
     font-weight: 600;
 }
 
-/* Sections  */
-.services {
-    background-color: rgb(255, 255, 255);
+
+/*Hero image */
+#hero-image {
+    height: 600px;
+    width:100%;
+    /*overflow: hidden; */
+    position: relative;
+    margin: auto;
+    background: url(../css/images/group-tuition.jpg) no-repeat center center;
+    background-size:cover;
 }
+
+
+/* Cover text box */
+#cover-text {
+    color:#000000;
+    font-size: 20px;
+    font-family: sans-serif;
+    text-align:center;
+    width: 600px;
+    height: 170px;
+    background-color: rgba(136, 209, 107, 0.7);
+    top: 40px;
+    right: 75px;
+    position: absolute;
+    /* Animates zoom effect on home page */
+    animation-name: hero-zoom;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+  }
+  /* Creates the level of zoom for hero image 1 */
+  @keyframes hero-zoom {
+      from{
+          transform: scale(0.8);
+     }
+      to{
+          transform: scale(1.0);
+     }
+  }
+
+
+
+
+
+
+/* Sections  */
+.section-heading-uppercase {
+    text-align: center;
+
+}
+
+.services {
+    margin: auto;
+}
+
 
 .reviews {
-    background-color: #ffffff;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
 }
 
+.review-title {
+    float: right;
+}
+
+.review {
+    text-align: left;  
+}
+
+#fernando {
+        background-image: url(images/fernando\ alonso.jpg);
+        height: 75px;
+        width:75px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        float:left;
+}
+
+#lance {
+    background-image: url(images/lance-stroll.jpg);
+    height: 75px;
+    width:75px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    float:left;
+}
+
+#susie {
+    background-image: url(images/susie-wolff.jpg);
+    height: 75px;
+    width:75px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    float:left;
+}
 
 .gcse {
-    background-color: rgba(148, 233, 193, 0.74);
-    margin: 10px;
+    background-color: rgba(148, 233, 193, 0.74); 
 }
 
 .alevel {
-    background-color: rgba(153, 186, 218, 0.842);
-    margin: 10px;
+    background-color: rgba(153, 186, 218, 0.842); 
 }
+
+
+
+
+
 
 /* Footer  */
 footer {
