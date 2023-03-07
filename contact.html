@@ -35,6 +35,7 @@
             </ul>
         </nav>
     </header>
+    
 
     <section class="contact-us">
         <div class="row">
@@ -48,18 +49,19 @@
                     <!-- on mobile its 10 columns wide with an offset of 1 so content is
                     centered and there is one column margin down left side.
                 then switch offset off for tablets or larger screens-->
-                    <div class="col-10 offset-1 offset-sm-0 col-sm-6 col-md-6 map">
+                    <div class="col-10 offset-1 offset-sm-0 col-sm-8 col-md-6 map">
                         <div class="row">
                             <div class="col-10">
                                 <br>
                                 <h3>Find Us</h3>
+                                <h4>26 Chaplin Road, Wembley, London, HA0 4UD</h4>
                                 <div id="map"></div>
             
                             </div>
                         </div>
                         <br>
                     </div>
-                    <div class="col-10 offset-1 offset-sm-0 col-sm-6 col-md-6 contact">
+                    <div class="col-10 offset-1 offset-sm-0 col-sm-8 col-md-6 contact">
                         <div class="row">
                         <div class="col-10">
                             <br>
@@ -119,9 +121,11 @@
             </li>
         </ul>
     </footer>
-    <script>
-        var APIKEY = "AIzaSyB427EerKHdNM2mvMFJbUm8ogdqpEflOjQ";
-    </script>
+
+    
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB427EerKHdNM2mvMFJbUm8ogdqpEflOjQ&callback=initMap"></script>
+    <script src="assets/js/maps.js"></script>
 
     
 </body>

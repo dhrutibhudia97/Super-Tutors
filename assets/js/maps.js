@@ -10,7 +10,7 @@ function initMap() {
     var labels = "ABC";
 
     var locations = [
-        { lat: 51.550523, lng: -0.304891}
+        { lat: 51.550421, lng: -0.300412}
     ];
 
     var markers = locations.map(function(location, i) {
