@@ -171,8 +171,31 @@ td {
     text-align: right;
 }
 
-
+/* google maps   */
 div#map {min-height: 360px;}
+
+
+/*________Blog _______ */
+
+/* Blog Photo */
+
+.blog-text {
+    width: 450px;
+
+}
+
+#blogphotoone {
+    background-image: url(images/studying-girl.jpg);
+    height: 450px;
+    width:450px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+
+
 
 /* Footer  */
 footer {
