@@ -34,7 +34,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['booksesh.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['booksesh.herokuapp.com', 'localhost', 'booking-tutor-sessions.herokuapp.com']
 
 
 # Application definition
