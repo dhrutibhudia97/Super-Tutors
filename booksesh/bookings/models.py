@@ -22,12 +22,13 @@ TIME_OPTIONS = (
 
 
 class Session(models.Model):
-    user = models.ForeignKey(
-        User, on_delete=models.CASCADE, blank=True, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
+    email = models.EmailField()
     tutor_service = models.CharField(choices=SERVICE_OPTIONS)
     day = models.DateTimeField(default=datetime.now)
     time = models.CharField(choices=TIME_OPTIONS)
     ordered_on = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False)
 
     class Meta:
         ordering = ['-day']

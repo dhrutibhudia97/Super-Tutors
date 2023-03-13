@@ -92,10 +92,11 @@ WSGI_APPLICATION = 'booksesh.wsgi.application'
 #     }
 # }
 
+# trying to get rid of if '?' in path and not url.query: TypeError: a bytes-like object is required, not 'str'
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL")),
+    # 'default': dj_database_url.config(os.environ.get("DATABASE_URL")),
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
