@@ -9,4 +9,3 @@ class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created-on')
     template_name = 'blog.html'
     paginate_by = 8
-    
