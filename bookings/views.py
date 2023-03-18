@@ -18,6 +18,7 @@ from datetime import datetime, timedelta
 def index(request):
     return render(request, "index.html", {})
 
+
 def bookings(request):
     days = availableDates(15)
     validateDates = isDateValid(dates)
@@ -26,9 +27,17 @@ def bookings(request):
 def availableDates(days):
     today = datetime.now()
     days = []
-    for i in range (0, days):
+    for i in range(0, days):
         futureDates = today + timedelta(days=i)
         d = futureDates.strftime('%A')
         if d == 'Monday' or d == 'Tuesday' or d == 'Wednesday' or d == 'Friday' or d == 'Saturday' or d == 'Sunday':
             days.append(futureDates.strftime('%d-%m-%Y'))
     return days
+
+
+def isDateValid(futureDates):
+    validateDates = []
+    for a in futureDates:
+        if bookingsessions().objects.filter(day=a).count() < 13:
+            validateDates.append(a)
+    return validateDates
