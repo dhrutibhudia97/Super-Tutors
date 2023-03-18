@@ -217,3 +217,11 @@ def isDateValid(futureDates):
         if bookingsessions().objects.filter(day=a).count() < 13:
             validateDates.append(a)
     return validateDates
+
+
+def checkTime(times, day):
+    futureDates = []
+    for o in times:
+        if bookingsessions.objects.filter(day=day, time=o).count() < 1:
+            futureDates.append(o)
+    return futureDates
