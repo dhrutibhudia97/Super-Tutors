@@ -6,6 +6,14 @@ from datetime import datetime
 
 # STATUS = ((0, "Draft"), (1, "Published"))
 
+TUITION_CHOICES = (
+    ("GCSE Biology"), ("GCSE Chemistry"), ("GCSE Physics"),
+    ("A-LEVEL Biology"), ("A-LEVEL Chemistry"), ("A-LEVEL Physics")
+)
+
+TIME_CHOICES = (
+    ("4-5 PM"), ("5-6 PM"), ("6-7 PM"), ("7-8 PM"), ("8-9 PM")
+)
 # Create your models here.
 
 
