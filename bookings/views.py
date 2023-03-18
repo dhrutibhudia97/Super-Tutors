@@ -30,11 +30,11 @@ def bookings(request):
             messages.success(request, "You need to select a tuition service first!")
             return redirect('bookings')
 
-        #Store day and tuition type in django session:
+        # Store day and tuition type in django session:
         request.session['day'] = day
         request.session['tuitiontype'] = tuitiontype
 
-        return redirect('bookingSubmit')
+        return redirect('submitBooking')
 
 
     return render(request, 'booksession.html', {
@@ -42,6 +42,34 @@ def bookings(request):
             'validateDates':validateDates,
         })
 
+
+def submitBooking(request):
+    user = request.user.username
+    times = ["4-5 PM", "5-6 PM", "6-7 PM", "7-8 PM", "8-9 PM"]
+    today - datetime.now()
+    earliestDate = today.strftime('%d-%m-%y')
+    timerange = today + timedelta(days=14)
+    strtimerange = timerange.strftime('%d=%m-%y')
+    latestDate = strtimerange
+
+    day = request.session.get('day')
+    tuitiontype = request.session.get('tuitiontype')
+
+    timeslot = checkTime(times, day)
+    if request.method == 'POST':
+        time = request.POST.get("time")
+        date = strDay(day)
+
+    
+
+
+
+
+def stringDay(futureDates):
+    t = datetime.strftime(futureDates, '%d-%m-%y')
+    d = t.strftime('%A')
+    return d
+    
 
 
 
