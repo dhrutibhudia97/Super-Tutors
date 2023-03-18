@@ -98,6 +98,36 @@ def userView(request):
     })
 
 
+def updateBooking(request, id):
+    bookingsessions = bookingsessions.object.get(pk=id)
+    bookedDate = bookingsessions.day
+
+    today = datetime.today()
+    earliestDate = today.strftime('%d-%m-%y')
+
+    withinTwoDays = (bookedDate).strftime('%d-%m-%y') >= (today + timedelta(days=2)).strftime('%d=%m-%y')
+    days = availableDates(15)
+
+    validateDates = isDateValid(days)
+
+
+    if request.method == 'POST':
+        tuitiontype = request.POST.get('tuitiontype')
+        day = request.POST.get('day')
+
+        request.session['day'] = day
+        request.session['tuitiontype'] = tuitiontype
+
+        return redirect('submitUpdateBooking', id=id)
+    
+
+    return render(request, 'userUpdateView.html', {
+        'days': days,
+        'validateDates': validateDates,
+        'withinTwoDays': withinTwoDays,
+        'id': id,
+    })
+
 
 
      
