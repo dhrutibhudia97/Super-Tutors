@@ -19,6 +19,16 @@ def index(request):
     return render(request, "index.html", {})
 
 def bookings(request):
-    days = availableDay(15)
-    
-    validateDays = isDayValid(days)
+    days = availableDates(15)
+    validateDates = isDateValid(dates)
+
+
+def availableDates(days):
+    today = datetime.now()
+    days = []
+    for i in range (0, days):
+        futureDates = today + timedelta(days=i)
+        d = futureDates.strftime('%A')
+        if d == 'Monday' or d == 'Tuesday' or d == 'Wednesday' or d == 'Friday' or d == 'Saturday' or d == 'Sunday':
+            days.append(futureDates.strftime('%d-%m-%Y'))
+    return days
