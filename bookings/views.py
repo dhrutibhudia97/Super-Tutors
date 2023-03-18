@@ -129,6 +129,57 @@ def updateBooking(request, id):
     })
 
 
+def submitUpdateBooking(request, id):
+    user = request.user.username
+    times = ["4-5 PM", "5-6 PM", "6-7 PM", "7-8 PM", "8-9 PM"]
+    today - datetime.now()
+    earliestDate = today.strftime('%d-%m-%y')
+    timerange = today + timedelta(days=14)
+    strtimerange = timerange.strftime('%d=%m-%y')
+    latestDate = strtimerange
+
+    day = request.session.get('day')
+    tuitiontype = request.session.get('tuitiontype')
+
+    timeslot = checkEditTime(times, day, id)
+    bookingsessions = bookingsessions.objects.get(pk=id)
+    userBookedTime = bookingsessions.time 
+    if request.method == 'POST':
+        time = request.POST.get("time")
+        date = strDay(day)
+
+        if tuitiontype != None:
+            if day <= latestDate and day >= earliestDate:
+                if date == 'Monday' or date == 'Tuesday' or date == 'Wednesday' or date == 'Friday' or date == 'Saturday' or date == 'Sunday':
+                    if bookingsessions.objects.filter(day=day).count() < 6:
+                        if bookingsessions.objects.filter(day=day, time=time).count() < 1 or userBookedTime == time:
+                            bookingSessionStatus = bookingsessions.objects.filter(pk=id).update(
+                                user=user,
+                                tuitiontype=tuitiontype,
+                                day=day, 
+                                time=time,
+                            )
+                            messages.success(request, "Tuition session has been successfully changed!")
+                            return redirect('index')
+                        else:
+                            messages.success(request, "This time has already been booked by someone else.")
+                    else:
+                        messages.success(request, "This day is fully booked")
+                else:
+                    messages.success(request, "Tuition cannot be booked on this day right now")
+            else:
+                messages.success(request, "Tuition cannot be booked on this day right now")
+        else:
+            messages.success(request, "You need to select a tuition type.")
+        return redirect('userView')
+        
+    return render(request, 'sessionUpdateSubmit.html', {
+        'times': timeslot,
+        'id': id,
+    })
+    
+
+
 
      
 def stringDay(futureDates):
