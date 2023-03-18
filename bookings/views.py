@@ -38,8 +38,8 @@ def bookings(request):
 
 
     return render(request, 'booksession.html', {
-            'days':days,
-            'validateDates':validateDates,
+            'days': days,
+            'validateDates': validateDates,
         })
 
 
@@ -66,10 +66,10 @@ def submitBooking(request):
                     if bookingsessions.objects.filter(day=day).count() < 6:
                         if bookingsessions.objects.filter(day=day, time=time).count() < 1:
                             bookingSessionStatus = bookingsessions.objects.get_or_create(
-                                user = user,
-                                tuitiontype = tuitiontype,
-                                day = day, 
-                                time = time,
+                                user=user,
+                                tuitiontype=tuitiontype,
+                                day=day, 
+                                time=time,
                             )
                             messages.success(request, "Tuition session has been booked.")
                             return redirect('index')
@@ -85,25 +85,27 @@ def submitBooking(request):
             messages.success(request, "You need to select a tuition type.")
         
     return render(request, 'sessionsubmit.html', {
-        'times':timeslot,
+        'times': timeslot,
     })
 
+
+def userView(request):
+    user = request.user
+    sessionsBooked = bookingsessions.objects.filter(user=user).order_by('day', 'time')
+    return render(request, "userView.html", {
+        'user': user,
+        'sessionsBooked': sessionsBooked,
+    })
+
+
+
+
      
-
-        
-
-    
-
-
-
-
 def stringDay(futureDates):
     t = datetime.strftime(futureDates, '%d-%m-%y')
     d = t.strftime('%A')
     return d
     
-
-
 
 def availableDates(days):
     today = datetime.now()
