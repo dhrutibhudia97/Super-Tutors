@@ -60,6 +60,38 @@ def submitBooking(request):
         time = request.POST.get("time")
         date = strDay(day)
 
+        if tuitiontype != None:
+            if day <= latestDate and day >= earliestDate:
+                if date == 'Monday' or date == 'Tuesday' or date == 'Wednesday' or date == 'Friday' or date == 'Saturday' or date == 'Sunday':
+                    if bookingsessions.objects.filter(day=day).count() < 6:
+                        if bookingsessions.objects.filter(day=day, time=time).count() < 1:
+                            bookingSessionStatus = bookingsessions.objects.get_or_create(
+                                user = user,
+                                tuitiontype = tuitiontype,
+                                day = day, 
+                                time = time,
+                            )
+                            messages.success(request, "Tuition session has been booked.")
+                            return redirect('index')
+                        else:
+                            messages.success(request, "This time is not available.")
+                    else:
+                        messages.success(request, "This day is fully booked")
+                else:
+                    messages.success(request, "Tuition cannot be booked on this day right now")
+            else:
+                messages.success(request, "Tuition cannot be booked on this day right now")
+        else:
+            messages.success(request, "You need to select a tuition type.")
+        
+    return render(request, 'sessionsubmit.html', {
+        'times':timeslot,
+    })
+
+     
+
+        
+
     
 
 
