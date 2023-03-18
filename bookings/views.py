@@ -23,6 +23,27 @@ def bookings(request):
     days = availableDates(15)
     validateDates = isDateValid(dates)
 
+    if request.method == 'POST':
+        tuitiontype = request.POST.get('tuitiontype')
+        day = request.POST.get('day')
+        if tuitiontype == None:
+            messages.success(request, "You need to select a tuition service first!")
+            return redirect('bookings')
+
+        #Store day and tuition type in django session:
+        request.session['day'] = day
+        request.session['tuitiontype'] = tuitiontype
+
+        return redirect('bookingSubmit')
+
+
+    return render(request, 'booksession.html', {
+            'days':days,
+            'validateDates':validateDates,
+        })
+
+
+
 
 def availableDates(days):
     today = datetime.now()
@@ -31,7 +52,7 @@ def availableDates(days):
         futureDates = today + timedelta(days=i)
         d = futureDates.strftime('%A')
         if d == 'Monday' or d == 'Tuesday' or d == 'Wednesday' or d == 'Friday' or d == 'Saturday' or d == 'Sunday':
-            days.append(futureDates.strftime('%d-%m-%Y'))
+            days.append(futureDates.strftime('%d-%m-%y'))
     return days
 
 
