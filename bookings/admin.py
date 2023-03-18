@@ -1,16 +1,19 @@
 from django.contrib import admin
-from .models import Post
-from django_summernote.admin import SummernoteModelAdmin
+# from .models import Post
+from .models import *
+from django_summernote.admin import SummernoteModelAdmin # might need to comment out
+
+admin.site.register(bookingsessions)
 
 
-@admin.register(Post)  # registers both post and post admin class with admin site
-class PostAdmin(SummernoteModelAdmin):
+# @admin.register(Post)  # registers both post and post admin class with admin site
+# class PostAdmin(SummernoteModelAdmin):
    
-    prepopulated_fields = {'slug': ('title',)}
-    summernote_fields = ('content')
-    list_filter = ('status', 'created_on')
-    list_display = ('title', 'slug', 'status', 'created_on')
-    search_fields = ['title', 'content']
+#     prepopulated_fields = {'slug': ('title',)}
+#     summernote_fields = ('content')
+#     list_filter = ('status', 'created_on')
+#     list_display = ('title', 'slug', 'status', 'created_on')
+#     search_fields = ['title', 'content']
 
 
 # @admin.register(Comment)
