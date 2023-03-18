@@ -18,4 +18,7 @@ from datetime import datetime, timedelta
 def index(request):
     return render(request, "index.html", {})
 
-def booking
+def bookings(request):
+    days = availableDay(15)
+    
+    validateDays = isDayValid(days)
