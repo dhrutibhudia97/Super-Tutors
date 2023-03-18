@@ -36,7 +36,6 @@ def bookings(request):
 
         return redirect('submitBooking')
 
-
     return render(request, 'booksession.html', {
             'days': days,
             'validateDates': validateDates,
@@ -177,7 +176,20 @@ def submitUpdateBooking(request, id):
         'times': timeslot,
         'id': id,
     })
-    
+
+
+def staffView(request):
+    today = datetime.today()
+    earliestDate = today.strftime('%d-%m-%y')
+    timerange = today + timedelta(days=15)
+    strtimerange = timerange.strftime('%d-%m-%y')
+    latestDate = strtimerange
+
+    bookedSessions = bookingsessions.objects.filter(day_range=[earliestDate, latestDate]).order_by('day', 'time')
+
+    return render(request, 'staffView.html', {
+        'bookedSessions': bookedSessions,
+    })
 
 
 
