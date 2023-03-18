@@ -225,3 +225,13 @@ def checkTime(times, day):
         if bookingsessions.objects.filter(day=day, time=o).count() < 1:
             futureDates.append(o)
     return futureDates
+
+
+def checkEditTime(times, day, id):
+    futureDates = []
+    bookingsessions() = bookingsessions.objects.get(pk=id)
+    time = bookingsessions.time
+    for o in times:
+        if bookingsessions.objects.filter(day=day, time=o).count() < 1 or time == o:
+            futureDates.append(o)
+    return futureDates
