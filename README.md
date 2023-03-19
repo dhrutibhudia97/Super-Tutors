@@ -82,17 +82,12 @@ ___________________________________________________________________
  ### **As an account holding user**
  - I can do everything a general non-acount holding user can
  - Login and logout of my account
- - Like and unlike blog posts
- - Comment on blog posts
- - Delete and update my comment on blog posts
  - Book tuition sessions
  - See my booked tuition sessions
  - Cancel my tuition sessions
 
 ### **As an admin (website creator) user**
 - I can do everything that an account holding user can
-- I can delete other users comments
-- I can post new blogs onto blog page
 - I can delete other peoples tuition sessions (optional)
 
 
