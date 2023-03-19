@@ -12,3 +12,6 @@ urlpatterns = [
     path('session-update-submit/<int:id>', views.sessionUpdateSubmit, name='sessionUpdateSubmit'),
     path('staff-View', views.staffView, name='staffView'),
 ]
+
+# NOT SURE WHAT THE DIFFERENCE IS BETWEEN BOTH URLS.PY FILES...
+# NEED HELP CONNECTING HTML FILES IN TEMPLATE FOLDER...
