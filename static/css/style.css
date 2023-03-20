@@ -1,5 +1,5 @@
 .brand {
-    font-family: Lato, sans-serif;
+    font-family: sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
     color: #4A4A4F;
@@ -141,7 +141,7 @@
 /*-----------Your own CSS ------------*?
 
 body {
-    font-family:lato, sans-serif;
+    font-family: sans-serif;
     font-weight:300;
     color:#141414;
     margin: 2px 10px;
@@ -154,7 +154,7 @@ header {
     display: inline-block;
 }
 
-h1, h2 {font-family:oswald, sans-serif;
+h1, h2 {font-family: sans-serif;
        text-transform:uppercase; 
        letter-spacing:2.5px;
        color:#252525;
