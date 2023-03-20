@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect
 # from django.contrib import messages
 # from .models import Post
 from .models import *
+from .models import Post
 from datetime import datetime, timedelta
 
 
