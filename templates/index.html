@@ -1,201 +1,153 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Looking for a science tutor in Wembley, London">
-    <meta name="keywords" content="science tutor, GCSE science, A-level science, wembley, london">
+{% extends "layout.html" %}
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" type="text/css">
-    <script src="https://kit.fontawesome.com/1dcd83a48c.js" crossorigin="anonymous"></script>
+{% block content %}
 
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Super Tutor</title>
-</head>
-<body>
-    <header class="col-12">
-        <a href="index.html">
-            <h1 id="logo">Super Tutor</h1>
-        </a>
-        <nav>
-            <ul id="menu">
-                <li>
-                    <a href="#">Register</a>
-                </li>
-                <li>
-                    <a href="#">Log In</a>
-                </li>
-                <li>
-                    <a href="#">Staff</a>
-                </li>
-                <li>
-                    <a href="contact.html">Contact Us</a>
-                </li>
-                <li>
-                    <a href="booksession.html">Book a session</a>
-                </li>
-                <li>
-                    <a href="index.html" class="active">Home</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+<div class="container-fluid">
+    <div class="row">
 
-    <section id="hero-image">
-        <div id="cover-text">
-            <h2>GCSE and A-level Group science tuition sessions</h2>
-            <h3>Between 2021-2022 our GCSE students grades were 3 times higher than average!</h3>
-        </div>
-    </section>
-
-    <section class="services">
-        <br>
-        <!-- allows us to create table structure so columns remain at same height
-        column size 8 as that is 2/3 width of the screen. section-column specifies
-    that this column is a table cell. -->
-        <div class="row">
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col">
-                        <h2 class="section-heading-uppercase">Services and Prices</h2>
+        <section class="services">
+            <br>
+            <!-- allows us to create table structure so columns remain at same height
+            column size 8 as that is 2/3 width of the screen. section-column specifies
+        that this column is a table cell. -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col">
+                            <h2 class="section-heading-uppercase">Services and Prices</h2>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <!-- on mobile its 10 columns wide with an offset of 1 so content is
-                    centered and there is one column margin down left side.
-                then switch offset off for tablets or larger screens-->
-                    <div class="col-10 offset-1 offset-sm-0 col-sm-6 col-md-6 gcse">
-                        <div class="row">
+                    <div class="row">
+                        <!-- on mobile its 10 columns wide with an offset of 1 so content is
+                        centered and there is one column margin down left side.
+                    then switch offset off for tablets or larger screens-->
+                        <div class="col-10 offset-1 offset-sm-0 col-sm-6 col-md-6 gcse">
+                            <div class="row">
+                                <div class="col-10">
+                                    <br>
+                                    <h3>Group GCSE Sessions</h3>
+                                    <br>
+                                    <h4>GCSE: Biology, Chemistry and Physics (1 or 2 hour long sessions)</h4>
+                                    <p> Up to 6 students at one time. Tailor made classes to answer the students concerns that have been submitted to the tutor prior to the session.
+                                        Specialising in the AQA and Edexcel exam boards. Expert tutors that are able to confidently teach the syllabus and provide students with lots of exam practice.
+                                    </p>
+                                    <h4>Prices on weekdays (Mon, Tue, Wed, Fri)</h4>
+                                    <ul>
+                                        <li>1 hour session: £15</li>
+                                        <li>2 hour session: £25</li>
+                                    </ul>
+                                    <h4>Prices on weekends (Sat & Sun)</h4>
+                                    <ul>
+                                        <li>1 hour session: £20</li>
+                                        <li>2 hour session: £30</li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                        <div class="col-10 offset-1 offset-sm-0 col-sm-6 col-md-6 alevel">
+                            <div class="row">
                             <div class="col-10">
                                 <br>
-                                <h3>Group GCSE Sessions</h3>
+                                <h3>Group AS and A-level Sessions</h3>
                                 <br>
-                                <h4>GCSE: Biology, Chemistry and Physics (1 or 2 hour long sessions)</h4>
-                                <p> Up to 6 students at one time. Tailor made classes to answer the students concerns that have been submitted to the tutor prior to the session.
-                                    Specialising in the AQA and Edexcel exam boards. Expert tutors that are able to confidently teach the syllabus and provide students with lots of exam practice.
+                                <h4>AS & A2: Biology, Chemistry and Physics (1 or 2 hour long sessions)</h4>
+                                <p> Up to 5 students at one time. Tailor made classes to answer the students concerns that have been submitted to the tutor prior to the session.
+                                Specialising in the AQA and Edexcel exam boards. Expert tutors that are able to teach and provide students with exam practice and support with UCAS applications.
                                 </p>
                                 <h4>Prices on weekdays (Mon, Tue, Wed, Fri)</h4>
                                 <ul>
-                                    <li>1 hour session: £15</li>
-                                    <li>2 hour session: £25</li>
+                                    <li>1 hour session: £25</li>
+                                    <li>2 hour session: £40</li>
                                 </ul>
                                 <h4>Prices on weekends (Sat & Sun)</h4>
                                 <ul>
-                                    <li>1 hour session: £20</li>
-                                    <li>2 hour session: £30</li>
+                                    <li>1 hour session: £30</li>
+                                    <li>2 hour session: £50</li>
                                 </ul>
-                                
+                            
                             </div>
                         </div>
-                        <br>
+                </div>
+                    </section>
+    
+    
+        <section class="reviews">
+            <br>
+            <!-- allows us to create table structure so columns remain at same height
+            column size 8 as that is 2/3 width of the screen. section-column specifies
+        that this column is a table cell. -->
+            <div class="row">
+                <!-- col-md-4 takes 1/3 of width and col-md-8 for three reasons to 
+                take up remaining 2/3s-->
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col">
+                            <h2 class="section-heading uppercase">Reviews</h2>
+                        </div>
                     </div>
-                    <div class="col-10 offset-1 offset-sm-0 col-sm-6 col-md-6 alevel">
-                        <div class="row">
-                        <div class="col-10">
-                            <br>
-                            <h3>Group AS and A-level Sessions</h3>
-                            <br>
-                            <h4>AS & A2: Biology, Chemistry and Physics (1 or 2 hour long sessions)</h4>
-                            <p> Up to 5 students at one time. Tailor made classes to answer the students concerns that have been submitted to the tutor prior to the session.
-                            Specialising in the AQA and Edexcel exam boards. Expert tutors that are able to teach and provide students with exam practice and support with UCAS applications.
-                            </p>
-                            <h4>Prices on weekdays (Mon, Tue, Wed, Fri)</h4>
-                            <ul>
-                                <li>1 hour session: £25</li>
-                                <li>2 hour session: £40</li>
-                            </ul>
-                            <h4>Prices on weekends (Sat & Sun)</h4>
-                            <ul>
-                                <li>1 hour session: £30</li>
-                                <li>2 hour session: £50</li>
-                            </ul>
+                    <div class="row">
+                        <!-- on mobile its 10 columns wide with an offset of 1 so content is
+                        centered and there is one column margin down left side.
+                    then switch offset off for tablets or larger screens-->
+                        <div class="col-10 offset-1 offset-sm-0 col-sm-6 col-md-4 review">
+                            <div class="row">
+                                <!-- column with width of 2. aria hidden to true to not
+                                    confuse screen readers-->
+                                <div class="col-2" id="fernando">
+                                </div>
+                                <div class="col-10">
+                                    <h4 class="review-title">"Great Value for Money"</h4>
+                                    <h5>Fernando Alonso (parent)</h5>
+                                    <p> One-to-one tuition is so expensive per hour, I couldn't justify the cost weekly.
+                                        These group sessions are so affordable and my daughter says they are really helpful.
+                                    </p>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-10 offset-1 offset-sm-0 col-sm-6 col-md-4 review">
+                            <div class="row">
+                                <div class="col-2" id="lance">
+                                </div>
+                                <div class="col-10">
+                                    <h4 class="review-title">"Got me my A* in Biology"</h4>
+                                    <h5>Lance Stroll (student)</h5>
+                                    <p> Helped so much with exam prep and understanding topics I found difficult in class.
+                                        Got the highest grade in class!                           
+                                    </p>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-10 offset-1 offset-sm-0 col-sm-6 col-md-4 review">
+                            <div class="row">
+                                <div class="col-2" id="susie">
+                                </div>
+                                <div class="col-10">
+                                    <h4 class="review-title">"So convenient. I don't have to drive to the tutors house!"</h4>
+                                    <h5>Susie Wolff (parent)</h5>
+                                    <p>
+                                        This is such an easy way for my child to get the extra support in class. I don't have to drive my son to his tutors house in rush hour traffic!
+                                        They can make their way there by themselves after school.
+                                    </p>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
                         
-                        </div>
-                    </div>
-            </div>
-                </section>
-
-
-    <section class="reviews">
-        <br>
-        <!-- allows us to create table structure so columns remain at same height
-        column size 8 as that is 2/3 width of the screen. section-column specifies
-    that this column is a table cell. -->
-        <div class="row">
-            <!-- col-md-4 takes 1/3 of width and col-md-8 for three reasons to 
-            take up remaining 2/3s-->
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col">
-                        <h2 class="section-heading uppercase">Reviews</h2>
+    
                     </div>
                 </div>
-                <div class="row">
-                    <!-- on mobile its 10 columns wide with an offset of 1 so content is
-                    centered and there is one column margin down left side.
-                then switch offset off for tablets or larger screens-->
-                    <div class="col-10 offset-1 offset-sm-0 col-sm-6 col-md-4 review">
-                        <div class="row">
-                            <!-- column with width of 2. aria hidden to true to not
-                                confuse screen readers-->
-                            <div class="col-2" id="fernando">
-                            </div>
-                            <div class="col-10">
-                                <h4 class="review-title">"Great Value for Money"</h4>
-                                <h5>Fernando Alonso (parent)</h5>
-                                <p> One-to-one tuition is so expensive per hour, I couldn't justify the cost weekly.
-                                    These group sessions are so affordable and my daughter says they are really helpful.
-                                </p>
-                                <br>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-10 offset-1 offset-sm-0 col-sm-6 col-md-4 review">
-                        <div class="row">
-                            <div class="col-2" id="lance">
-                            </div>
-                            <div class="col-10">
-                                <h4 class="review-title">"Got me my A* in Biology"</h4>
-                                <h5>Lance Stroll (student)</h5>
-                                <p> Helped so much with exam prep and understanding topics I found difficult in class.
-                                    Got the highest grade in class!                           
-                                </p>
-                                <br>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-10 offset-1 offset-sm-0 col-sm-6 col-md-4 review">
-                        <div class="row">
-                            <div class="col-2" id="susie">
-                            </div>
-                            <div class="col-10">
-                                <h4 class="review-title">"So convenient. I don't have to drive to the tutors house!"</h4>
-                                <h5>Susie Wolff (parent)</h5>
-                                <p>
-                                    This is such an easy way for my child to get the extra support in class. I don't have to drive my son to his tutors house in rush hour traffic!
-                                    They can make their way there by themselves after school.
-                                </p>
-                                <br>
-                            </div>
-                        </div>
-                    </div>
-                    
-
-                </div>
             </div>
-        </div>
-
-
-</section>
     
-<footer>   
-    <ul class="social-network">
-        <li><p>Super Tutor © 2023</p></li>
-        <li><a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Visit our Facebook page (opens in new tab)"><i class="fa-brands fa-facebook"></i></a>
-        </li>
-    </ul>
-</footer>
     
-</body>
-</html>
+    </section>
+        
+
+           
+    </div>
+</div>
+
+{%endblock%}
