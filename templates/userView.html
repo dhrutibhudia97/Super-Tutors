@@ -1,50 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Looking for a science tutor in Wembley, London">
-    <meta name="keywords" content="science tutor, GCSE science, A-level science, wembley, london">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" type="text/css">
-    <script src="https://kit.fontawesome.com/1dcd83a48c.js" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Super Tutor</title>
-</head>
-<body>
-    <header class="col-12">
-        <a href="index.html">
-            <h1 id="logo">Super Tutor</h1>
-        </a>
-        <nav>
-            <ul id="menu">
-                <li>
-                    <a href="#">Register</a>
-                </li>
-                <li>
-                    <a href="#">Log In</a>
-                </li>
-                <li>
-                    <a href="#">Staff</a>
-                </li>
-                <li>
-                    <a href="contact.html">Contact Us</a>
-                </li>
-                <li>
-                    <a href="booksession.html">Book a session</a>
-                </li>
-                <li>
-                    <a href="index.html" class="active">Home</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+<title>User View</title>
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
 
 
 
-    <!-- CONTENT-->
+
+{% if user.is_authenticated %}
+<h2 class=" ms-5 mt-5 ">User View</h2>
+
+<div class="shadow p-4 mb-5 bg-body bg-body rounded text-black  m-5 ">
+    <h2 class="">User Info:</h2>
+    <ul class="list-group fs-4 mt-3">
+            <li class="list-group mt-2">Username: {{ user }}</li>
+    </ul>
+</div>
+
+<!--Appointment Loop-->
+{% if bookingsessions.count > 0 %}
+<div class="mt-5 ">
+    <h1 class=" ms-5">Booked Sessions:</h1>
+    <div class="shadow p-4 mb-3 bg-body bg-body rounded text-black  m-5">
+        {% for bookingsessions in bookingsessionss %}
+        <div class="list-group fs-4 border p-3 mb-3">
+            <p class="list-group mt-2">Day: {{ bookingsessions.day }}</p>
+            <p class="list-group mt-2">Time: {{ bookingsessions.time_choice }}</p>
+            <p class="list-group mt-2">Tuition type: {{ bookingsessions.tuitiontype }}</p>
+            <div class="mt-3 mb-2">
+                <a class="btn btn-primary rounded-3 p-2" href="{% url 'updateBooking' bookingsessions.id %}">Edit Appointment</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+{% else %}
+
+<div class="shadow p-4 mb-5 bg-body bg-body rounded text-black  m-5">
+    <h1 class="p-2  ms-3">First Sign in!</h1>
+    <a href="{% url 'login' %}" class="btn btn-primary text-white">Sign in</a>
+</div>
+
+{% endif %}
+
+
+{% endblock %}
 
     <footer>   
         <ul class="social-network">

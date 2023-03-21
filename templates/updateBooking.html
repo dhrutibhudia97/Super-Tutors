@@ -1,0 +1,66 @@
+<title>Edit your session</title>
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+
+
+
+{% if user.is_authenticated %}
+<!--if 48hrs before session-->
+{% if withinTwoDays == True %}
+<h1 class="text-center  mt-3">Edit Session</h1>
+
+<div class="shadow p-4 mb-5 bg-body bg-body rounded text-black  m-5 ">
+    <form method="post" action="{% url 'updateBooking' id %}" class="me-2 ms-2" required>
+        {% csrf_token %}
+
+        <!--input tuition type-->
+        <div>
+            <h3 class="">Select Tuition Type:</h3>
+            <select class="form-select fs-3" name="service">
+                <option value="GCSE Biology">GCSE Biology</option>
+                <option value="GCSE Chemistry">GCSE Chemistry</option>
+                <option value="GCSE Physics">GCSE Physics</option>
+                <option value="A-LEVEL Biology">A-LEVEL Biology</option>
+                <option value="A-LEVEL Chemistry">GCSE Chemistry</option>
+                <option value="A-LEVEL Physics">GCSE Physics</option>
+            </select>
+        </div>
+            <!--input day-->
+            <div class="mt-3">
+                <h3 class="">Select Day:</h3>
+                <select class="form-select fs-3" name="day">
+                    {% for validateDate in validateDates %}
+                    <option value="{{validateDates}}">{{validateDates}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <br/>
+            <button type="submit" class="btn btn-primary text-white">Continue with booking</button>
+        </div>
+    </form>
+</div>
+<!--else if its 48hrs before editing-->
+{% else %}
+
+<div class="shadow p-4 mb-5 bg-body bg-body rounded text-black m-5 text-center fPersian">
+    <h1 class="text-danger">Editing booked sessions is only available 48hrs before the session</h1>
+    <a href="{% url 'userPanel' %}" class="btn btn-primary mt-5">Return To User View</a>
+</div>
+
+{% endif %}
+
+
+{% else %}
+
+<div class="shadow p-4 mb-5 bg-body bg-body rounded text-black  m-5 ">
+    <h1 class="p-2  me-3">You Are Not Signed in!</h1>
+    <a href="{% url 'signup' %}" class="btn btn-primary shadow text-center">Sign in</a>
+</div>
+
+{% endif %}
+
+
+{% endblock %}

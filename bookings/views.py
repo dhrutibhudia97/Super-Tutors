@@ -65,12 +65,12 @@ def submitBooking(request):
             if day <= latestDate and day >= earliestDate:
                 if date == 'Monday' or date == 'Tuesday' or date == 'Wednesday' or date == 'Friday' or date == 'Saturday' or date == 'Sunday':
                     if bookingsessions.objects.filter(day=day).count() < 6:
-                        if bookingsessions.objects.filter(day=day, time=time).count() < 1:
+                        if bookingsessions.objects.filter(day=day, time_choice=time_choice).count() < 1:
                             bookingSessionStatus = bookingsessions.objects.get_or_create(
                                 user=user,
                                 tuitiontype=tuitiontype,
                                 day=day, 
-                                time=time,
+                                time_choice=time_choice,
                             )
                             messages.success(request, "Tuition session has been booked.")
                             return redirect('index')
@@ -92,7 +92,7 @@ def submitBooking(request):
 
 def userView(request):
     user = request.user
-    sessionsBooked = bookingsessions.objects.filter(user=user).order_by('day', 'time')
+    sessionsBooked = bookingsessions.objects.filter(user=user).order_by('day', 'time_choice')
     return render(request, "userView.html", {
         'user': user,
         'sessionsBooked': sessionsBooked,
@@ -132,7 +132,7 @@ def updateBooking(request, id):
 
 def submitUpdateBooking(request, id):
     user = request.user.username
-    times = ["4-5 PM", "5-6 PM", "6-7 PM", "7-8 PM", "8-9 PM"]
+    time_choices = ["4-5 PM", "5-6 PM", "6-7 PM", "7-8 PM", "8-9 PM"]
     today - datetime.now()
     earliestDate = today.strftime('%d-%m-%y')
     timerange = today + timedelta(days=14)
@@ -153,12 +153,12 @@ def submitUpdateBooking(request, id):
             if day <= latestDate and day >= earliestDate:
                 if date == 'Monday' or date == 'Tuesday' or date == 'Wednesday' or date == 'Friday' or date == 'Saturday' or date == 'Sunday':
                     if bookingsessions.objects.filter(day=day).count() < 6:
-                        if bookingsessions.objects.filter(day=day, time=time).count() < 1 or userBookedTime == time:
+                        if bookingsessions.objects.filter(day=day, time_choice=time_choice).count() < 1 or userBookedTime == time:
                             bookingSessionStatus = bookingsessions.objects.filter(pk=id).update(
                                 user=user,
                                 tuitiontype=tuitiontype,
                                 day=day, 
-                                time=time,
+                                time_choice=time_choice,
                             )
                             messages.success(request, "Tuition session has been successfully changed!")
                             return redirect('index')
