@@ -20,9 +20,10 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('allauth.urls')),
     # path('summernote/', include('django_summernote.urls')),
-    # path("", include('bookings.urls', name='bookings_urls)),
+    # path("", include('bookings.urls', name='bookings_urls')),
+    path('accounts/', include('allauth.urls')),
+
     # path('', views.index, name='index'),
     # path('book-session', views.booksession, name='booksession'),
     # path('session-submit', views.sessionsubmit, name='sessionsubmit'),

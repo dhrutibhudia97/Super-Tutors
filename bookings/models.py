@@ -8,7 +8,7 @@ from datetime import datetime
 
 TUITION_CHOICES = (
     ("GCSE Biology", "GCSE Biology"), ("GCSE Chemistry", "GCSE Chemistry"), ("GCSE Physics", "GCSE Physics"),
-    ("A-LEVEL Biology", "A-Level Biology"), ("A-LEVEL Chemistry", "A-LEVEL Chemistry"), ("A-LEVEL Physics", "A-LEVEL Physics")
+    ("A-LEVEL Biology", "A-LEVEL Biology"), ("A-LEVEL Chemistry", "A-LEVEL Chemistry"), ("A-LEVEL Physics", "A-LEVEL Physics")
 )
 
 TIME_CHOICES = (
