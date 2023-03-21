@@ -58,7 +58,7 @@ def submitBooking(request):
 
     timeslot = checkTime(times, day)
     if request.method == 'POST':
-        time = request.POST.get("time")
+        time_choice = request.POST.get("time_choice")
         date = strDay(day)
 
         if tuitiontype != None:
@@ -144,9 +144,9 @@ def submitUpdateBooking(request, id):
 
     timeslot = checkEditTime(times, day, id)
     bookingsessions = bookingsessions.objects.get(pk=id)
-    userBookedTime = bookingsessions.time 
+    userBookedTime = bookingsessions.time_choice
     if request.method == 'POST':
-        time = request.POST.get("time")
+        time_choice = request.POST.get("time_choice")
         date = strDay(day)
 
         if tuitiontype != None:
@@ -232,8 +232,8 @@ def checkTime(times, day):
 def checkEditTime(times, day, id):
     futureDates = []
     bookingsessions() = bookingsessions.objects.get(pk=id)
-    time = bookingsessions.time
+    time_choice = bookingsessions.time_choice
     for o in times:
-        if bookingsessions.objects.filter(day=day, time=o).count() < 1 or time == o:
+        if bookingsessions.objects.filter(day=day, time_choice=o).count() < 1 or time_choice == o:
             futureDates.append(o)
     return futureDates

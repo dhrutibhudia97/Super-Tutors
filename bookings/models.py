@@ -21,7 +21,7 @@ class bookingsessions(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True, null=True, blank=False)
     tuitiontype = models.CharField(max_length=75, choices=TUITION_CHOICES, default="GCSE Biology")
     day = models.DateField(default=datetime.now)
-    time = models.CharField(max_length=6, choices=TIME_CHOICES, default="4 PM")
+    time_choice = models.CharField(max_length=6, choices=TIME_CHOICES, default="4 PM")
     time_ordered = models.DateTimeField(default=datetime.now, blank=True)
 
     def __str__(self):
