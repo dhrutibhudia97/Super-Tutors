@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect
 # from django.contrib import messages
 # from .models import Post
 from .models import *
-from .models import Post
+# from .models import Post
 from datetime import datetime, timedelta
 
 
@@ -231,7 +231,7 @@ def checkTime(times, day):
 
 def checkEditTime(times, day, id):
     futureDates = []
-    bookingsessions() = bookingsessions.objects.get(pk=id)
+    bookingsessions = bookingsessions.objects.get(pk=id)
     time_choice = bookingsessions.time_choice
     for o in times:
         if bookingsessions.objects.filter(day=day, time_choice=o).count() < 1 or time_choice == o:
