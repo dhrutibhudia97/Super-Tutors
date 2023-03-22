@@ -30,8 +30,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['booking-tutor-sessions.herokuapp.com', 'localhost']
-
+ALLOWED_HOSTS = ['booking-tutor-sessions.herokuapp.com', 'localhost', 'https://8000-dhrutibhudi-supertutors-fcx3q1a398w.ws-eu92.gitpod.io']
+CSRF_TRUSTED_ORIGINS = 'https://*.gitpod.io', 'https://8000-dhrutibhudi-supertutors-fcx3q1a398w.ws-eu92.gitpod.io'
 
 # Application definition
 

@@ -24,7 +24,6 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path("", include('bookings.urls'), name='bookings_urls'),
 
-    # path('', views.index, name='index'),
     # path('book-session', views.booksession, name='booksession'),
     # path('session-submit', views.sessionsubmit, name='sessionsubmit'),
     # path('user-View', views.userView, name='userView'),
@@ -32,3 +31,5 @@ urlpatterns = [
     # path('session-update-submit/<int:id>', views.sessionUpdateSubmit, name='sessionUpdateSubmit'),
     # path('staff-View', views.staffView, name='staffView'),
 ]
+
+
