@@ -21,6 +21,10 @@ def index(request):
     return render(request, "index.html", {})
 
 
+def contact(request):
+    return render(request, "contact.html",{})
+
+
 def bookings(request):
     days = availableDates(15)
     validateDates = isDateValid(dates)

@@ -4,8 +4,9 @@ from django.urls import path
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('contact.html', views.contact),
     # path('admin/', admin.site.urls), # not sure if this is meant to be here
-#     path('book-session', views.booksession, name='booksession'),
+    # path('book-session', views.booksession, name='booksession'),
 #     path('session-submit', views.sessionsubmit, name='sessionsubmit'),
 #     path('user-View', views.userView, name='userView'),
 #     path('user-update-view/<int:id>', views.userUpdateView, name='userUpdateView'),
