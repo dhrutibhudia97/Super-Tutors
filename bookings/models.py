@@ -17,7 +17,7 @@ TIME_CHOICES = (
 # Create your models here.
 
 
-class bookingsessions(models.Model):
+class bookingsession(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True, null=True, blank=False)
     tuitiontype = models.CharField(max_length=75, choices=TUITION_CHOICES, default="GCSE Biology")
     day = models.DateField(datetime.now)
