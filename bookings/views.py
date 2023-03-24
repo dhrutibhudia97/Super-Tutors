@@ -26,7 +26,7 @@ def contact(request):
 
 
 def bookings(request):
-    days = availableDates(15)
+    days = availableDate(15)
     validateDates = isDateValid(days)
 
     if request.method == 'POST':
@@ -40,7 +40,8 @@ def bookings(request):
         request.session['day'] = day
         request.session['tuitiontype'] = tuitiontype
 
-        return redirect('submitBooking')
+        def submitbooking(redirect):
+            return render(request, 'submitbooking.html', {})
 
     return render(request, 'bookings.html', {
             'days': days,
@@ -111,7 +112,7 @@ def updateBooking(request, id):
     earliestDate = today.strftime('%Y-%M-%D')
 
     withinTwoDays = (bookedDate).strftime('%Y-%M-%D') >= (today + timedelta(days=2)).strftime('%Y-%M-%D')
-    days = availableDates(15)
+    days = availableDate(15)
 
     validateDates = isDateValid(days)
 
@@ -206,7 +207,7 @@ def stringDay(futureDates):
     return d
     
 
-def availableDates(days):
+def availableDate(days):
     today = datetime.now()
     days = []
     for i in range(0, 15):

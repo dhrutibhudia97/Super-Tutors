@@ -7,6 +7,7 @@ urlpatterns = [
     path('contact.html', views.contact),
     # path('admin/', admin.site.urls), # not sure if this is meant to be here
     path('bookings.html', views.bookings, name='bookings'),
+    path('submitBooking.html', views.submitBooking, name='submitbooking'),
 #     path('session-submit', views.sessionsubmit, name='sessionsubmit'),
 #     path('user-View', views.userView, name='userView'),
 #     path('user-update-view/<int:id>', views.userUpdateView, name='userUpdateView'),
