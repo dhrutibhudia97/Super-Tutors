@@ -22,12 +22,12 @@ def index(request):
 
 
 def contact(request):
-    return render(request, "contact.html",{})
+    return render(request, "contact.html", {})
 
 
 def bookings(request):
     days = availableDates(15)
-    validateDates = isDateValid(dates)
+    validateDates = isDateValid(days)
 
     if request.method == 'POST':
         tuitiontype = request.POST.get('tuitiontype')
@@ -42,7 +42,7 @@ def bookings(request):
 
         return redirect('submitBooking')
 
-    return render(request, 'booksession.html', {
+    return render(request, 'bookings.html', {
             'days': days,
             'validateDates': validateDates,
         })
@@ -52,9 +52,9 @@ def submitBooking(request):
     user = request.user.username
     times = ["4-5 PM", "5-6 PM", "6-7 PM", "7-8 PM", "8-9 PM"]
     today - datetime.now()
-    earliestDate = today.strftime('%d-%m-%y')
+    earliestDate = today.strftime('%Y-%M-%D')
     timerange = today + timedelta(days=14)
-    strtimerange = timerange.strftime('%d=%m-%y')
+    strtimerange = timerange.strftime('%Y-%M-%D')
     latestDate = strtimerange
 
     day = request.session.get('day')
@@ -108,9 +108,9 @@ def updateBooking(request, id):
     bookedDate = bookingsessions.day
 
     today = datetime.today()
-    earliestDate = today.strftime('%d-%m-%y')
+    earliestDate = today.strftime('%Y-%M-%D')
 
-    withinTwoDays = (bookedDate).strftime('%d-%m-%y') >= (today + timedelta(days=2)).strftime('%d=%m-%y')
+    withinTwoDays = (bookedDate).strftime('%Y-%M-%D') >= (today + timedelta(days=2)).strftime('%Y-%M-%D')
     days = availableDates(15)
 
     validateDates = isDateValid(days)
@@ -138,9 +138,9 @@ def submitUpdateBooking(request, id):
     user = request.user.username
     time_choices = ["4-5 PM", "5-6 PM", "6-7 PM", "7-8 PM", "8-9 PM"]
     today - datetime.now()
-    earliestDate = today.strftime('%d-%m-%y')
+    earliestDate = today.strftime('%Y-%M-%D')
     timerange = today + timedelta(days=14)
-    strtimerange = timerange.strftime('%d=%m-%y')
+    strtimerange = timerange.strftime('%Y-%M-%D')
     latestDate = strtimerange
 
     day = request.session.get('day')
@@ -186,9 +186,9 @@ def submitUpdateBooking(request, id):
 
 def staffView(request):
     today = datetime.today()
-    earliestDate = today.strftime('%d-%m-%y')
+    earliestDate = today.strftime('%Y-%M-%D')
     timerange = today + timedelta(days=15)
-    strtimerange = timerange.strftime('%d-%m-%y')
+    strtimerange = timerange.strftime('%Y-%M-%D')
     latestDate = strtimerange
 
     bookedSessions = bookingsessions.objects.filter(day_range=[earliestDate, latestDate]).order_by('day', 'time')
@@ -201,7 +201,7 @@ def staffView(request):
 
      
 def stringDay(futureDates):
-    t = datetime.strftime(futureDates, '%d-%m-%y')
+    t = datetime.strftime(futureDates, '%Y-%M-%D')
     d = t.strftime('%A')
     return d
     
@@ -209,18 +209,18 @@ def stringDay(futureDates):
 def availableDates(days):
     today = datetime.now()
     days = []
-    for i in range(0, days):
+    for i in range(0, 15):
         futureDates = today + timedelta(days=i)
-        d = futureDates.strftime('%A')
+        d = futureDates.strftime('%Y-%M-%D')
         if d == 'Monday' or d == 'Tuesday' or d == 'Wednesday' or d == 'Friday' or d == 'Saturday' or d == 'Sunday':
-            days.append(futureDates.strftime('%d-%m-%y'))
+            days.append(futureDates.strftime('%Y-%M-%D'))
     return days
 
 
 def isDateValid(futureDates):
     validateDates = []
     for a in futureDates:
-        if bookingsessions().objects.filter(day=a).count() < 13:
+        if bookingsessions.objects.filter(day=a).count() < 13:
             validateDates.append(a)
     return validateDates
 
