@@ -92,7 +92,7 @@ def userview(request):
     sessionsbooked = bookingtuition.objects.filter(user=user).order_by('day', 'time_choice')
     return render(request, "userview.html", {
         'user': user,
-        'sessionsBooked': sessionsBooked,
+        'sessionsbooked': sessionsbooked,
     })
 
 
@@ -179,12 +179,12 @@ def submitupdatebooking(request, id):
 
 def staffview(request):
     today = datetime.today()
-    earliestDate = today.strftime('%Y-%M-%D')
+    earliestDate = today.strftime('%Y-%m-%d')
     timerange = today + timedelta(days=15)
-    strtimerange = timerange.strftime('%Y-%M-%D')
+    strtimerange = timerange.strftime('%Y-%m-%d')
     latestDate = strtimerange
 
-    everysessionbooked = bookingtuition.objects.filter(day__range=[earliestDate, latestDate]).order_by('day', 'time')
+    everysessionbooked = bookingtuition.objects.filter(day__range=[earliestDate, latestDate]).order_by('day', 'time_choice')
 
     return render(request, 'staffview.html', {
         'everysessionbooked': everysessionbooked,
