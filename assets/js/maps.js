@@ -13,10 +13,10 @@ function initMap() {
         { lat: 51.550421, lng: -0.300412}
     ];
 
-    var markers = locations.map(function(location, i) {
+    var markers = locations.map(function(location, b) {
         return new google.maps.Marker({
             position: location,
-            label: labels[i % labels.length]
+            label: labels[b % labels.length]
         });
     });
 

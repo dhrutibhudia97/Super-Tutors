@@ -1,10 +1,8 @@
 from django.db import models
+from datetime import datetime
 from django.contrib.auth.models import User
 # from cloudinary.models import CloudinaryField
-from datetime import datetime
 
-
-# STATUS = ((0, "Draft"), (1, "Published"))
 
 TUITION_CHOICES = (
     ("GCSE Biology", "GCSE Biology"), ("GCSE Chemistry", "GCSE Chemistry"), ("GCSE Physics", "GCSE Physics"),
@@ -17,7 +15,7 @@ TIME_CHOICES = (
 # Create your models here.
 
 
-class bookingsession(models.Model):
+class bookingtuition(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True, null=True, blank=False)
     tuitiontype = models.CharField(max_length=75, choices=TUITION_CHOICES, default="GCSE Biology")
     day = models.DateField(datetime.now)

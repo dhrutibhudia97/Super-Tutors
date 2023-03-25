@@ -21,13 +21,13 @@
 <div class="mt-5 ">
     <h1 class=" ms-5">Booked Sessions:</h1>
     <div class="shadow p-4 mb-3 bg-body bg-body rounded text-black  m-5">
-        {% for bookingsession in sessionsbooked %}
+        {% for bookingtuition in sessionsbooked %}
         <div class="list-group fs-4 border p-3 mb-3">
-            <p class="list-group mt-2">Day: {{ bookingsession.day }}</p>
-            <p class="list-group mt-2">Time: {{ bookingsession.time_choice }}</p>
-            <p class="list-group mt-2">Tuition type: {{ bookingsession.tuitiontype }}</p>
+            <p class="list-group mt-2">Day: {{ bookingtuition.day }}</p>
+            <p class="list-group mt-2">Time: {{ bookingtuition.time_choice }}</p>
+            <p class="list-group mt-2">Tuition type: {{ bookingtuition.tuitiontype }}</p>
             <div class="mt-3 mb-2">
-                <a class="btn btn-primary rounded-3 p-2" href="{% url 'updateBooking' bookingsession.id %}">Edit Appointment</a>
+                <a class="btn btn-primary rounded-3 p-2" href="{% url 'updateBooking' bookingtuition.id %}">Edit Appointment</a>
             </div>
         </div>
         {% endfor %}
