@@ -201,13 +201,13 @@ h1, h2 {font-family: sans-serif;
 
 
 /*Hero image */
-#hero-image {
+.hero-image {
     height: 600px;
     width:100%;
     /*overflow: hidden; */
     position: relative;
     margin: auto;
-    background: url(../css/images/group-tuition.jpg) no-repeat center center;
+    background: no-repeat center center;
     background-size:cover;
 }
 
