@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-# from django.contrib import messages
+from django.contrib import messages
 # from .models import Post
 from .models import *
 # from .models import Post
@@ -25,8 +25,8 @@ def bookings(request):
     if request.method == 'POST':
         tuitiontype = request.POST.get('tuitiontype')
         day = request.POST.get('day')
-        if tuitiontype == None:
-            messages.success(request, "You need to select a tuition service first!")
+        if tuitiontype is None:
+            messages.error(request, "You need to select a tuition service first!")
             return redirect('bookings')
 
         # Store day and tuition type in django session:
@@ -34,6 +34,7 @@ def bookings(request):
         request.session['tuitiontype'] = tuitiontype
 
         return redirect('submitbooking.html')
+
     print(days)
     return render(request, 'bookings.html', {
         'days': days,
@@ -63,7 +64,7 @@ def submitbooking(request):
                 if date == 'Monday' or date == 'Tuesday' or date == 'Wednesday' or date == 'Friday' or date == 'Saturday' or date == 'Sunday':
                     if bookingtuition.objects.filter(day=day).count() < 13:
                         if bookingtuition.objects.filter(day=day, time_choice=time_choice).count() < 1:
-                            bookingSessionStatus = bookingtuition.objects.get_or_create(
+                            bookingSessionStatus = bookingtuition.objects.create(
                                 user = user,
                                 tuitiontype = tuitiontype,
                                 day = day, 

@@ -8,7 +8,7 @@ urlpatterns = [
     path('bookings.html', views.bookings, name='bookings'),
     path('submitbooking.html', views.submitbooking, name='submitbooking'),
     path('userview.html', views.userview, name='userview'),
-    path('updatebooking.html/<int:id>', views.updatebooking, name='userbooking'),
+    path('updatebooking/<int:id>', views.updatebooking, name='updatebooking'),
     path('submitupdatebooking/<int:id>', views.submitupdatebooking, name='submitupdatebooking'),
     path('staffview', views.staffview, name='staffview'),
 ]

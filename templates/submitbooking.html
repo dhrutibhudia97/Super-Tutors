@@ -1,9 +1,10 @@
-<title>Submit Booking</title>
 {% extends 'base.html' %}
 {% load static %}
-{% block body %}
+{% block title %}
+<title>Submit Booking</title>
+{% endblock title %}
 
-
+{% block content %}
 
 
 {% if user.is_authenticated %}
@@ -15,7 +16,7 @@
         
         <h3 class="text-center mt-4">Time:</h3>
         <div>
-            <select class="form-select fs-3 text-center" name="time">
+            <select class="form-select fs-3 text-center" name="time_choice">
                 {% for time_choice in times %}
                 <option value="{{time_choice}}">{{time_choice}}</option>
                 {% endfor %}
