@@ -33,7 +33,7 @@ def bookings(request):
         request.session['tuitiontype'] = tuitiontype
 
         # return redirect('submitbooking.html')
-        return redirect(request, 'submitbooking.html')
+        return redirect('submitbooking.html')
 
     return render(request, 'bookings.html', {
             'days': days,

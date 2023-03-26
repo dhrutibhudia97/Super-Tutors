@@ -24,12 +24,12 @@
             </tr>
           </thead>
           <tbody id="myTable">
-              {% for item in items %}
+              {% for sessionbooked in everysessionbooked %}
             <tr>
-              <td class="text-center">{{item.time_choice}}</td>
-              <td class="text-center">{{item.user}}</td>
-              <td class="text-center">{{item.tuitiontype}}</td>
-              <td class="text-center">{{item.day}}</td>
+              <td>{{item.time_choice}}</td>
+              <td>{{item.user}}</td>
+              <td>{{item.tuitiontype}}</td>
+              <td>{{item.day}}</td>
             </tr>
               {% endfor %}
           </tbody>
