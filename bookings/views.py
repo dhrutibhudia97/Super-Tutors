@@ -61,10 +61,11 @@ def submitbooking(request):
 
         if tuitiontype != None:
             if day <= latestDate and day >= earliestDate:
-                if date == 'Monday' or date == 'Tuesday' or date == 'Wednesday' or date == 'Friday' or date == 'Saturday' or date == 'Sunday':
+                if date != 'Thursday':
+                #if date == 'Monday' or date == 'Tuesday' or date == 'Wednesday' or date == 'Friday' or date == 'Saturday' or date == 'Sunday':
                     if bookingtuition.objects.filter(day=day).count() < 13:
                         if bookingtuition.objects.filter(day=day, time_choice=time_choice).count() < 1:
-                            bookingSessionStatus = bookingtuition.objects.create(
+                            bookingSessionStatus = bookingtuition.objects.get_or_create(
                                 user = user,
                                 tuitiontype = tuitiontype,
                                 day = day, 
@@ -149,7 +150,8 @@ def submitupdatebooking(request, id):
 
         if tuitiontype != None:
             if day <= latestDate and day >= earliestDate:
-                if date == 'Monday' or date == 'Tuesday' or date == 'Wednesday' or date == 'Friday' or date == 'Saturday' or date == 'Sunday':
+                if date != 'Thursday':
+                # if date == 'Monday' or date == 'Tuesday' or date == 'Wednesday' or date == 'Friday' or date == 'Saturday' or date == 'Sunday':
                     if bookingtuition.objects.filter(day=day).count() < 6:
                         if bookingtuition.objects.filter(day=day, time_choice=time_choice).count() < 1 or userBookedTime == time_choice:
                             bookingSessionStatus = bookingtuition.objects.filter(pk=id).update(
