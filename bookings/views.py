@@ -9,6 +9,7 @@ from datetime import datetime, timedelta
 
 
 
+
 def index(request):
     return render(request, "index.html", {})
 
@@ -32,22 +33,21 @@ def bookings(request):
         request.session['day'] = day
         request.session['tuitiontype'] = tuitiontype
 
-        # return redirect('submitbooking.html')
         return redirect('submitbooking.html')
-
+    print(days)
     return render(request, 'bookings.html', {
-            'days': days,
-            'validateDates': validateDates,
+        'days': days,
+        'validateDates': validateDates,
         })
 
 
 def submitbooking(request):
     user = request.user
     times = ["4-5 PM", "5-6 PM", "6-7 PM", "7-8 PM", "8-9 PM"]
-    today = datetime.now()
-    earliestDate = today.strftime('%Y-%M-%D')
+    today = datetime.today()
+    earliestDate = today.strftime('%Y-%m-%d')
     timerange = today + timedelta(days=14)
-    strtimerange = timerange.strftime('%Y-%M-%D')
+    strtimerange = timerange.strftime('%Y-%m-%d')
     latestDate = strtimerange
 
     day = request.session.get('day')
@@ -101,9 +101,9 @@ def updatebooking(request, id):
     bookedDate = bookingtuition.day
 
     today = datetime.today()
-    earliestDate = today.strftime('%Y-%M-%D')
+    earliestDate = today.strftime('%Y-%m-%d')
 
-    withinTwoDays = (bookedDate).strftime('%Y-%M-%D') >= (today + timedelta(days=2)).strftime('%Y-%M-%D')
+    withinTwoDays = (bookedDate).strftime('%Y-%m-%d') >= (today + timedelta(days=2)).strftime('%Y-%m-%d')
     days = availableDate(15)
 
     validateDates = isDateValid(days)
@@ -130,10 +130,10 @@ def updatebooking(request, id):
 def submitupdatebooking(request, id):
     user = request.user
     times = ["4-5 PM", "5-6 PM", "6-7 PM", "7-8 PM", "8-9 PM"]
-    today = datetime.now()
-    earliestDate = today.strftime('%Y-%M-%D')
+    today = datetime.today()
+    earliestDate = today.strftime('%Y-%m-%d')
     timerange = today + timedelta(days=14)
-    strtimerange = timerange.strftime('%Y-%M-%D')
+    strtimerange = timerange.strftime('%Y-%m-%d')
     latestDate = strtimerange
 
     day = request.session.get('day')
@@ -192,20 +192,28 @@ def staffview(request):
 
      
 def stringDay(futureDates):
-    t = datetime.strptime(futureDates, '%Y-%M-%D')
+    t = datetime.strptime(futureDates, '%Y-%m-%d')
     d = t.strftime('%A')
     return d
     
-
 def availableDate(days):
     today = datetime.now()
     days = []
     for i in range(0, 15):
-        futureDates = today + timedelta(days=i)
-        d = futureDates.strftime('%Y-%M-%D')
-        if d == 'Monday' or d == 'Tuesday' or d == 'Wednesday' or d == 'Friday' or d == 'Saturday' or d == 'Sunday':
-            days.append(futureDates.strftime('%Y-%M-%D'))
+        day = today + timedelta(days=i)
+        if day.weekday() != 'Thursday':
+            days.append(day.strftime('%Y-%m-%d'))
     return days
+
+# def availableDate(days):
+#     today = datetime.now()
+#     days = []
+#     for i in range(0, 15):
+#         futureDates = today + timedelta(days=i)
+#         if futureDates.weekday() != 'Thursday':
+#             days.append(futureDates.strftime('%Y-%m-%d'))
+#     return days
+
 
 
 def isDateValid(futureDates):

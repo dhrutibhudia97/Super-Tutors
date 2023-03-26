@@ -29,8 +29,8 @@
             <div class="mt-3">
                 <h3 class="">Select Day:</h3>
                 <select class="form-select fs-3" name="day">
-                    {% for validateDate in validateDates %}
-                    <option value="{{ValidateDate}}">{{ValidateDate}}</option>
+                    {% for day in days %}
+                    <option value="{{day}}">{{day}}</option>
                     {% endfor %}
                 </select>
             </div>

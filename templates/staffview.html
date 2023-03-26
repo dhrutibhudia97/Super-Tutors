@@ -3,9 +3,6 @@
 {% load static %}
 {% block body %}
 
-
-
-
 {% if user.is_authenticated %}
 
 <div class="shadow p-4 mb-5 bg-body bg-body rounded text-black  m-5 ">
@@ -14,6 +11,7 @@
     <br>
     
     <div class="table-responsive">
+      <h2 class="section-heading-uppercase">All booked tuition Session:</h2>
       <table class="table table-bordered table-striped table-hover mx-auto">
           <thead>
             <tr>
