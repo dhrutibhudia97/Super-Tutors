@@ -36,9 +36,7 @@
                     <a href="{% url 'index' %}" class="active">Home</a>
                 </li>
                 {% if user.is_authenticated %}
-                <li>
-                    <a href="{% url 'staffview' %}">Staff View</a>
-                </li>
+            
                 <li>
                     <a href="{% url 'userview' %}">User View</a>
                 </li>

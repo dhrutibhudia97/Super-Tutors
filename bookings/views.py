@@ -188,18 +188,18 @@ def submitupdatebooking(request, id):
     })
 
 
-def staffview(request):
-    today = datetime.today()
-    earliestDate = today.strftime('%Y-%m-%d')
-    timerange = today + timedelta(days=15)
-    strtimerange = timerange.strftime('%Y-%m-%d')
-    latestDate = strtimerange
+# def staffview(request):
+#     today = datetime.today()
+#     earliestDate = today.strftime('%Y-%m-%d')
+#     timerange = today + timedelta(days=15)
+#     strtimerange = timerange.strftime('%Y-%m-%d')
+#     latestDate = strtimerange
 
-    everysessionbooked = Bookingtuition.objects.filter(day__range=[earliestDate, latestDate]).order_by('day', 'time_choice')
+#     everysessionbooked = Bookingtuition.objects.filter(day__range=[earliestDate, latestDate]).order_by('day', 'time_choice')
 
-    return render(request, 'staffview.html', {
-        'everysessionbooked': everysessionbooked,
-    })
+#     return render(request, 'staffview.html', {
+#         'everysessionbooked': everysessionbooked,
+#     })
 
      
 def stringDay(futureDates):
