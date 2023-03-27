@@ -98,6 +98,15 @@ def userview(request):
     })
 
 
+
+def deletebooking(request, id):
+    bookingtuition = Bookingtuition.objects.get(pk=id)
+    bookingtuition.delete()
+    return redirect('userview')
+
+
+
+
 def updatebooking(request, id):
     bookingtuition = Bookingtuition.objects.get(pk=id)
     bookedDate = bookingtuition.day
