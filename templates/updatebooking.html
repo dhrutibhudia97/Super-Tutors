@@ -12,13 +12,13 @@
 <h1 class="text-center  mt-3">Edit Session</h1>
 
 <div class="shadow p-4 mb-5 bg-body bg-body rounded text-black  m-5 ">
-    <form method="post" action="{% url 'updateBooking' id %}" class="me-2 ms-2" required>
+    <form method="post" action="{% url 'updatebooking' id %}" class="me-2 ms-2" required>
         {% csrf_token %}
 
         <!--input tuition type-->
         <div>
             <h3 class="">Select Tuition Type:</h3>
-            <select class="form-select fs-3" name="service">
+            <select class="form-select fs-3" name="tuitiontype">
                 <option value="GCSE Biology">GCSE Biology</option>
                 <option value="GCSE Chemistry">GCSE Chemistry</option>
                 <option value="GCSE Physics">GCSE Physics</option>
@@ -32,7 +32,7 @@
                 <h3 class="">Select Day:</h3>
                 <select class="form-select fs-3" name="day">
                     {% for validateDate in validateDates %}
-                    <option value="{{validateDates}}">{{validateDates}}</option>
+                    <option value="{{validateDate}}">{{validateDate}}</option>
                     {% endfor %}
                 </select>
             </div>
@@ -47,7 +47,7 @@
 
 <div class="shadow p-4 mb-5 bg-body bg-body rounded text-black m-5 text-center fPersian">
     <h1 class="text-danger">Editing booked sessions is only available 48hrs before the session</h1>
-    <a href="{% url 'userPanel' %}" class="btn btn-primary mt-5">Return To User View</a>
+    <a href="{% url 'userview' %}" class="btn btn-primary mt-5">Return To User View</a>
 </div>
 
 {% endif %}

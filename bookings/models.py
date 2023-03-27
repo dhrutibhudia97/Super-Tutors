@@ -15,8 +15,8 @@ TIME_CHOICES = (
 # Create your models here.
 
 
-class bookingtuition(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True, null=True, blank=False)
+class Bookingtuition(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=False)
     tuitiontype = models.CharField(max_length=75, choices=TUITION_CHOICES, default="GCSE Biology")
     day = models.DateField(datetime.now)
     time_choice = models.CharField(max_length=6, choices=TIME_CHOICES, default="4-5 PM")
@@ -24,5 +24,3 @@ class bookingtuition(models.Model):
 
     def __str__(self):
         return f"{self.user.username} | day: {self.day} | time: {self.time_choice}"
-
-

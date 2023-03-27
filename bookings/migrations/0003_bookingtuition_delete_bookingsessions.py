@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='bookingtuition',
+            name='Bookingtuition',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('tuitiontype', models.CharField(choices=[('GCSE Biology', 'GCSE Biology'), ('GCSE Chemistry', 'GCSE Chemistry'), ('GCSE Physics', 'GCSE Physics'), ('A-LEVEL Biology', 'A-LEVEL Biology'), ('A-LEVEL Chemistry', 'A-LEVEL Chemistry'), ('A-LEVEL Physics', 'A-LEVEL Physics')], default='GCSE Biology', max_length=75)),

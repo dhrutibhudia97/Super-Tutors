@@ -63,9 +63,9 @@ def submitbooking(request):
             if day <= latestDate and day >= earliestDate:
                 if date != 'Thursday':
                 #if date == 'Monday' or date == 'Tuesday' or date == 'Wednesday' or date == 'Friday' or date == 'Saturday' or date == 'Sunday':
-                    if bookingtuition.objects.filter(day=day).count() < 13:
-                        if bookingtuition.objects.filter(day=day, time_choice=time_choice).count() < 1:
-                            bookingSessionStatus = bookingtuition.objects.get_or_create(
+                    if Bookingtuition.objects.filter(day=day).count() < 13:
+                        if Bookingtuition.objects.filter(day=day, time_choice=time_choice).count() < 1:
+                            bookingSessionStatus = Bookingtuition.objects.get_or_create(
                                 user = user,
                                 tuitiontype = tuitiontype,
                                 day = day, 
@@ -91,7 +91,7 @@ def submitbooking(request):
 
 def userview(request):
     user = request.user
-    sessionsbooked = bookingtuition.objects.filter(user=user).order_by('day', 'time_choice')
+    sessionsbooked = Bookingtuition.objects.filter(user=user).order_by('day', 'time_choice')
     return render(request, "userview.html", {
         'user': user,
         'sessionsbooked': sessionsbooked,
@@ -99,7 +99,7 @@ def userview(request):
 
 
 def updatebooking(request, id):
-    bookingtuition = bookingtuition.object.get(pk=id)
+    bookingtuition = Bookingtuition.objects.get(pk=id)
     bookedDate = bookingtuition.day
 
     today = datetime.today()
@@ -114,7 +114,6 @@ def updatebooking(request, id):
     if request.method == 'POST':
         tuitiontype = request.POST.get('tuitiontype')
         day = request.POST.get('day')
-
         request.session['day'] = day
         request.session['tuitiontype'] = tuitiontype
 
@@ -142,19 +141,19 @@ def submitupdatebooking(request, id):
     tuitiontype = request.session.get('tuitiontype')
 
     timeslot = checkEditTime(times, day, id)
-    bookingtuition = bookingtuition.objects.get(pk=id)
+    bookingtuition = Bookingtuition.objects.get(pk=id)
     userBookedTime = bookingtuition.time_choice
     if request.method == 'POST':
         time_choice = request.POST.get("time_choice")
         date = stringDay(day)
-
+        print(tuitiontype, day, time_choice)
         if tuitiontype != None:
             if day <= latestDate and day >= earliestDate:
                 if date != 'Thursday':
                 # if date == 'Monday' or date == 'Tuesday' or date == 'Wednesday' or date == 'Friday' or date == 'Saturday' or date == 'Sunday':
-                    if bookingtuition.objects.filter(day=day).count() < 6:
-                        if bookingtuition.objects.filter(day=day, time_choice=time_choice).count() < 1 or userBookedTime == time_choice:
-                            bookingSessionStatus = bookingtuition.objects.filter(pk=id).update(
+                    if Bookingtuition.objects.filter(day=day).count() < 6:
+                        if Bookingtuition.objects.filter(day=day, time_choice=time_choice).count() < 1 or userBookedTime == time_choice:
+                            bookingSessionStatus = Bookingtuition.objects.filter(pk=id).update(
                                 user=user,
                                 tuitiontype=tuitiontype,
                                 day=day, 
@@ -187,7 +186,7 @@ def staffview(request):
     strtimerange = timerange.strftime('%Y-%m-%d')
     latestDate = strtimerange
 
-    everysessionbooked = bookingtuition.objects.filter(day__range=[earliestDate, latestDate]).order_by('day', 'time_choice')
+    everysessionbooked = Bookingtuition.objects.filter(day__range=[earliestDate, latestDate]).order_by('day', 'time_choice')
 
     return render(request, 'staffview.html', {
         'everysessionbooked': everysessionbooked,
@@ -198,7 +197,8 @@ def stringDay(futureDates):
     t = datetime.strptime(futureDates, '%Y-%m-%d')
     d = t.strftime('%A')
     return d
-    
+
+
 def availableDate(days):
     today = datetime.now()
     days = []
@@ -217,12 +217,10 @@ def availableDate(days):
 #             days.append(futureDates.strftime('%Y-%m-%d'))
 #     return days
 
-
-
 def isDateValid(futureDates):
     validateDates = []
     for a in futureDates:
-        if bookingtuition.objects.filter(day=a).count() < 13:
+        if Bookingtuition.objects.filter(day=a).count() < 13:
             validateDates.append(a)
     return validateDates
 
@@ -230,16 +228,16 @@ def isDateValid(futureDates):
 def checkTime(times, day):
     futureDates = []
     for o in times:
-        if bookingtuition.objects.filter(day=day, time_choice=o).count() < 1:
+        if Bookingtuition.objects.filter(day=day, time_choice=o).count() < 1:
             futureDates.append(o)
     return futureDates
 
 
 def checkEditTime(times, day, id):
     futureDates = []
-    bookingtuition = bookingtuition.objects.get(pk=id)
+    bookingtuition = Bookingtuition.objects.get(pk=id)
     time_choice = bookingtuition.time_choice
     for o in times:
-        if bookingtuition.objects.filter(day=day, time_choice=o).count() < 1 or time_choice == o:
+        if Bookingtuition.objects.filter(day=day, time_choice=o).count() < 1 or time_choice == o:
             futureDates.append(o)
     return futureDates
