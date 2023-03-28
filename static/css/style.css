@@ -184,7 +184,7 @@ h1, h2 {font-family: sans-serif;
 #logo {
     float:left;
     font-size:210%;
-    margin:20px 20px;
+    /* margin:0px 20px; */
     color: rgb(10, 47, 116);
     font-weight: 700; 
 }
@@ -325,6 +325,7 @@ h1, h2 {font-family: sans-serif;
 
 .contact {
     background-color: rgb(204, 238, 203);
+
     
 }
 
