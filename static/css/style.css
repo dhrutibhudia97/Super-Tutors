@@ -118,6 +118,8 @@
     color: #23BBBB;
 }
 
+
+
 button {
     text-align: center;
 }
@@ -145,7 +147,15 @@ button {
     border: none;
 }
 
+.alert {
+    background-color:  rgb(181, 223, 126);
+    text-align: center;
+    font-weight: 500;
+}
 
+.alert-dismissible {
+    padding-right: 0;
+}
 /*-----------Your own CSS ------------ */
 
 body {

@@ -72,17 +72,17 @@ def submitbooking(request):
                                 time_choice = time_choice,
                             )
                             messages.success(request, "Tuition session booked.")
-                            return redirect('index')
+                            return redirect('userview')
                         else:
-                            messages.success(request, "This time is not available.")
+                            messages.error(request, "This time is not available.")
                     else:
-                        messages.success(request, "This day is fully booked")
+                        messages.error(request, "This day is fully booked")
                 else:
-                    messages.success(request, "We are not open on Thursdays!")
+                    messages.error(request, "We are not open on Thursdays!")
             else:
-                messages.success(request, "Tuition cannot be booked more than two weeks in advance")
+                messages.error(request, "Tuition cannot be booked more than two weeks in advance")
         else:
-            messages.success(request, "You need to select a tuition type.")
+            messages.error(request, "You need to select a tuition type.")
         
     return render(request, 'submitbooking.html', {
         'times': timeslot,
@@ -102,6 +102,7 @@ def userview(request):
 def deletebooking(request, id):
     bookingtuition = Bookingtuition.objects.get(pk=id)
     bookingtuition.delete()
+    messages.success(request, "Tuition session was deleted.")
     return redirect('userview')
 
 
@@ -169,17 +170,17 @@ def submitupdatebooking(request, id):
                                 time_choice=time_choice,
                             )
                             messages.success(request, "Tuition session has been successfully changed!")
-                            return redirect('index')
+                            return redirect('userview')
                         else:
-                            messages.success(request, "This time has already been booked by someone else.")
+                            messages.error(request, "This time has already been booked by someone else.")
                     else:
-                        messages.success(request, "This day is fully booked")
+                        messages.error(request, "This day is fully booked")
                 else:
-                    messages.success(request, "Tuition cannot be booked on this day right now")
+                    messages.error(request, "Tuition cannot be booked on this day right now")
             else:
-                messages.success(request, "Tuition cannot be booked on this day right now")
+                messages.error(request, "Tuition cannot be booked on this day right now")
         else:
-            messages.success(request, "You need to select a tuition type.")
+            messages.error(request, "You need to select a tuition type.")
         return redirect('userview')
         
     return render(request, 'submitupdatebooking.html', {
