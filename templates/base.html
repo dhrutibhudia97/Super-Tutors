@@ -19,39 +19,28 @@
 </head>
 
 <body class="d-flex flex-column h-100 main-bg">
-    <header>
+    <header> 
         <nav>
-            <div>
-                <a href="{% url 'index' %}">
-                    <h1 id="logo">Super Tutor</h1>
-                </a> 
+            <a href="{% url 'index' %}"><h1 id="logo">Super Tutor</h1></a>
+            
             <ul id="menu">
+                <li><a href="contact.html">Contact Us</a></li>
                 <li>
-                    <a href="contact.html">Contact Us</a>
-                </li>
-                <li>
-                    <a href="{% url 'bookings' %}">Book a session</a>
-                </li>
-                <li>
-                    <a href="{% url 'index' %}" class="active">Home</a>
-                </li>
+                    <a href="{% url 'bookings' %}">Book a session</a></li>
+                <li><a href="{% url 'index' %}">Home</a></li>
+
                 {% if user.is_authenticated %}
             
-                <li>
-                    <a href="{% url 'userview' %}">User View</a>
-                </li>
-                <li>
-                    <a href="{% url 'account_logout' %}">Log Out</a>
-                </li>
+                <li><a href="{% url 'userview' %}">User View</a></li>
+                <li><a href="{% url 'account_logout' %}">Log Out</a></li>
+
                 {% else %}
-                <li>
-                    <a href="{% url 'account_signup' %}">Register</a>
-                </li>
-                <li>
-                    <a href="{% url 'account_login' %}">Log In</a>
-                </li>
+
+                <li><a href="{% url 'account_signup' %}">Register</a></li>
+                <li><a href="{% url 'account_login' %}">Log In</a></li>
                 
                 {% endif %}
+
             </ul>
         </nav>
     </header>
@@ -71,9 +60,7 @@
 
     <main class="flex-shrink-0 main-bg">
         {% block content %}
-        
-        
-
+    
 
         {% endblock content %}
     </main>

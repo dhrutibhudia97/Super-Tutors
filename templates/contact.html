@@ -32,13 +32,13 @@
                 </a> 
             <ul id="menu">
                 <li>
-                    <a href="contact.html">Contact Us</a>
+                    <a href="contact.html" class="active">Contact Us</a>
                 </li>
                 <li>
                     <a href="{% url 'bookings' %}">Book a session</a>
                 </li>
                 <li>
-                    <a href="{% url 'index' %}" class="active">Home</a>
+                    <a href="{% url 'index' %}">Home</a>
                 </li>
                 {% if user.is_authenticated %}
                 
@@ -96,30 +96,37 @@
                                     <table>
                                         <tr>
                                             <th>Monday</th>
+                                            <td></td>
                                             <td>4pm - 9pm</td>
                                         </tr>
                                         <tr>
                                             <th>Tuesday</th>
+                                            <td></td>
                                             <td>4pm - 9pm</td>
                                         </tr>
                                         <tr>
                                             <th>Wednesday</th>
+                                            <td></td>
                                             <td>4pm - 9pm</td>
                                         </tr>
                                         <tr>
-                                            <th>Thursday</th>        
+                                            <th>Thursday</th> 
+                                            <td></td>       
                                             <td>Closed</td>
                                         </tr>
                                         <tr>
-                                            <th>Friday</th>                               
+                                            <th>Friday</th> 
+                                            <td></td>                              
                                             <td>4pm - 9pm</td>
                                         </tr>
                                         <tr>
-                                            <th>Saturday</th>                                
+                                            <th>Saturday</th>   
+                                            <td></td>                             
                                             <td>4pm - 9pm</td>
                                         </tr>
                                         <tr>
-                                            <th>Sunday</th>                                   
+                                            <th>Sunday</th> 
+                                            <td></td>                                  
                                             <td>4pm - 9pm</td>
                                         </tr>
                                     </table> 
@@ -142,7 +149,7 @@
                     <br>
                     <h3 class="contact-heading uppercase text-center">Have a question for us?</h3>
                     <h5 class="uppercase text-center">Submit your query here.</h5>
-                    <h6 class="uppercase text-center">We will aim to get back to you in 2 working days.</h6>
+                    <h6 class="uppercase text-center">We will aim to get back to you within 2 working days.</h6>
     
                     <div class="center-form">
                         <form onsubmit = "return sendMail(this);">

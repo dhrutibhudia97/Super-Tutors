@@ -78,9 +78,9 @@ def submitbooking(request):
                     else:
                         messages.success(request, "This day is fully booked")
                 else:
-                    messages.success(request, "Tuition cannot be booked on this day right now")
+                    messages.success(request, "We are not open on Thursdays!")
             else:
-                messages.success(request, "Tuition cannot be booked on this day right now")
+                messages.success(request, "Tuition cannot be booked more than two weeks in advance")
         else:
             messages.success(request, "You need to select a tuition type.")
         
