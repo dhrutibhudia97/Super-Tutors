@@ -24,7 +24,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY') 
 
 
-DEBUG = 'DEBUG'
+DEBUG = 'DEBUG' in os.environ
 
 ALLOWED_HOSTS = ['booking-tutor-sessions.herokuapp.com', 'localhost', 'https://8000-dhrutibhudi-supertutors-fcx3q1a398w.ws-eu92.gitpod.io']
 CSRF_TRUSTED_ORIGINS = ['https://*.gitpod.io']
