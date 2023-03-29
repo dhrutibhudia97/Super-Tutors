@@ -1,10 +1,6 @@
-<!-- <title>User View</title> -->
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-
-
-
 
 {% if user.is_authenticated %}
 <h2 class=" ms-5 mt-5 ">User View</h2>
@@ -16,7 +12,6 @@
     </ul>
 </div>
 
-<!--Appointment Loop-->
 {% if sessionsbooked.count > 0 %}
 <div class="mt-5 ">
     <h1 class=" ms-5">Booked Tuition Sessions:</h1>

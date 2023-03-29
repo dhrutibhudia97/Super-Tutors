@@ -13,7 +13,6 @@
     <form method="post" action="{% url 'submitupdatebooking' id %}" class="me-2 ms-2" required>
         {% csrf_token %}
         
-        <!--input time-->
         <h3 class="text-center mt-4">Time:</h3>
         <div>
             <select class="form-select fs-3 text-center" name="time_choice">
@@ -39,10 +38,6 @@
 
 
 {% endblock %}
-
-
-
-    <!-- CONTENT-->
 
     <footer>   
         <ul class="social-network">

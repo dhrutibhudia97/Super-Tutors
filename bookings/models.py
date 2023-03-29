@@ -1,7 +1,6 @@
 from django.db import models
 from datetime import datetime
 from django.contrib.auth.models import User
-# from cloudinary.models import CloudinaryField
 
 
 TUITION_CHOICES = (
@@ -12,7 +11,6 @@ TUITION_CHOICES = (
 TIME_CHOICES = (
     ("4-5 PM", "4-5 PM"), ("5-6 PM", "5-6 PM"), ("6-7 PM", "6-7 PM"), ("7-8 PM", "7-8 PM"), ("8-9 PM", "8-9 PM")
 )
-# Create your models here.
 
 
 class Bookingtuition(models.Model):

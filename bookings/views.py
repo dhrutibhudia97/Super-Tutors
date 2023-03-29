@@ -2,12 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib import messages
-# from .models import Post
 from .models import *
-# from .models import Post
 from datetime import datetime, timedelta
-
-
 
 
 def index(request):
@@ -29,7 +25,6 @@ def bookings(request):
             messages.error(request, "You need to select a tuition service first!")
             return redirect('bookings')
 
-        # Store day and tuition type in django session:
         request.session['day'] = day
         request.session['tuitiontype'] = tuitiontype
 
@@ -62,7 +57,6 @@ def submitbooking(request):
         if tuitiontype != None:
             if day <= latestDate and day >= earliestDate:
                 if date != 'Thursday':
-                #if date == 'Monday' or date == 'Tuesday' or date == 'Wednesday' or date == 'Friday' or date == 'Saturday' or date == 'Sunday':
                     if Bookingtuition.objects.filter(day=day).count() < 13:
                         if Bookingtuition.objects.filter(day=day, time_choice=time_choice).count() < 1:
                             bookingSessionStatus = Bookingtuition.objects.get_or_create(
@@ -98,14 +92,11 @@ def userview(request):
     })
 
 
-
 def deletebooking(request, id):
     bookingtuition = Bookingtuition.objects.get(pk=id)
     bookingtuition.delete()
     messages.success(request, "Tuition session was deleted.")
     return redirect('userview')
-
-
 
 
 def updatebooking(request, id):
@@ -120,7 +111,6 @@ def updatebooking(request, id):
 
     validateDates = isDateValid(days)
 
-
     if request.method == 'POST':
         tuitiontype = request.POST.get('tuitiontype')
         day = request.POST.get('day')
@@ -129,7 +119,6 @@ def updatebooking(request, id):
 
         return redirect('submitupdatebooking', id=id)
     
-
     return render(request, 'updatebooking.html', {
         'days': days,
         'validateDates': validateDates,
@@ -160,7 +149,6 @@ def submitupdatebooking(request, id):
         if tuitiontype != None:
             if day <= latestDate and day >= earliestDate:
                 if date != 'Thursday':
-                # if date == 'Monday' or date == 'Tuesday' or date == 'Wednesday' or date == 'Friday' or date == 'Saturday' or date == 'Sunday':
                     if Bookingtuition.objects.filter(day=day).count() < 6:
                         if Bookingtuition.objects.filter(day=day, time_choice=time_choice).count() < 1 or userBookedTime == time_choice:
                             bookingSessionStatus = Bookingtuition.objects.filter(pk=id).update(
@@ -188,20 +176,6 @@ def submitupdatebooking(request, id):
         'id': id,
     })
 
-
-# def staffview(request):
-#     today = datetime.today()
-#     earliestDate = today.strftime('%Y-%m-%d')
-#     timerange = today + timedelta(days=15)
-#     strtimerange = timerange.strftime('%Y-%m-%d')
-#     latestDate = strtimerange
-
-#     everysessionbooked = Bookingtuition.objects.filter(day__range=[earliestDate, latestDate]).order_by('day', 'time_choice')
-
-#     return render(request, 'staffview.html', {
-#         'everysessionbooked': everysessionbooked,
-#     })
-
      
 def stringDay(futureDates):
     t = datetime.strptime(futureDates, '%Y-%m-%d')
@@ -218,14 +192,6 @@ def availableDate(days):
             days.append(day.strftime('%Y-%m-%d'))
     return days
 
-# def availableDate(days):
-#     today = datetime.now()
-#     days = []
-#     for i in range(0, 15):
-#         futureDates = today + timedelta(days=i)
-#         if futureDates.weekday() != 'Thursday':
-#             days.append(futureDates.strftime('%Y-%m-%d'))
-#     return days
 
 def isDateValid(futureDates):
     validateDates = []
