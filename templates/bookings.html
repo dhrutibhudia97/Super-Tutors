@@ -1,19 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
-{% block content %}
+{% block content %} 
 
-<title>Booking a Tutor Session</title>
-
-
-
-{% if user.is_authenticated %}
+<title>Booking a Tutor Session</title> 
+{% if user.is_authenticated %} 
 <h1 class="text-center  mt-3">Online Booking</h1>
-
 <div class="shadow p-4 mb-5 bg-body bg-body rounded text-black  m-5 ">
-    <form method="post" action="{% url 'bookings' %}" class="me-2 ms-2" required>
-        {% csrf_token %}
-
-        <div>
+    <form method="post" action="{% url 'bookings' %}" class="me-2 ms-2" required> {% csrf_token %} <div>
             <h3 class="">Select Tuition Type:</h3>
             <select class="form-select fs-3" name="tuitiontype">
                 <option value="GCSE Biology">GCSE Biology</option>
@@ -24,38 +17,19 @@
                 <option value="A-LEVEL Physics">GCSE Physics</option>
             </select>
         </div>
-
-            <div class="mt-3">
-                <h3 class="">Select Day:</h3>
-                <select class="form-select fs-3" name="day">
-                    {% for day in days %}
-                    <option value="{{day}}">{{day}}</option>
-                    {% endfor %}
-                </select>
-            </div>
-
-            <br/>
-            <button type="submit" class="btn btn-primary text-white">Continue</button>
+        <div class="mt-3">
+            <h3 class="">Select Day:</h3>
+            <select class="form-select fs-3" name="day"> {% for day in days %} <option value="{{day}}">{{day}}</option> {% endfor %} </select>
         </div>
-    </form>
+        <br />
+        <button type="submit" class="btn btn-primary text-white">Continue</button>
 </div>
-
-
+</form>
+</div> 
 {% else %}
-
 <div class="shadow p-4 mb-5 bg-body bg-body rounded text-black  m-5 ">
     <h1 class="p-2  me-3">You Are Not Signed in! You cannot book a session without signing in!</h1>
     <a href="{% url 'account_signup' %}" class="btn btn-primary shadow text-center">Sign in</a>
-</div>
-
-{% endif %}
+</div> 
+{% endif %} 
 {% endblock %}
-
-
-
-
-
-
-
-
-
