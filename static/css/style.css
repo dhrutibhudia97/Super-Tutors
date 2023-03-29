@@ -284,16 +284,22 @@ h1, h2 {font-family: sans-serif;
 }
 
 .review {
-    text-align: left;  
+    text-align: left;
+
 }
 
-#fernando {
-        background-image: url(images/fernando\ alonso.jpg);
-        height: 75px;
-        width:75px;
+.review-text {
+    /* padding: 10px 10px; */
+    margin: 10px 10px;
+}
+
+/* .fernando {
+        height: 67px;
+        width:67px;
         background-size: cover;
         background-repeat: no-repeat;
         float:left;
+        padding-right: 10px;
 }
 
 #lance {
@@ -312,7 +318,7 @@ h1, h2 {font-family: sans-serif;
     background-size: cover;
     background-repeat: no-repeat;
     float:left;
-}
+} */
 
 .gcse {
     background-color: rgba(148, 233, 193, 0.74); 

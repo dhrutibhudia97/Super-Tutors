@@ -24,11 +24,6 @@
             <a href="{% url 'index' %}"><h1 id="logo">Super Tutor</h1></a>
             
             <ul id="menu">
-                <li><a href="contact.html">Contact Us</a></li>
-                <li>
-                    <a href="{% url 'bookings' %}">Book a session</a></li>
-                <li><a href="{% url 'index' %}">Home</a></li>
-
                 {% if user.is_authenticated %}
             
                 <li><a href="{% url 'userview' %}">User View</a></li>
@@ -40,6 +35,11 @@
                 <li><a href="{% url 'account_login' %}">Log In</a></li>
                 
                 {% endif %}
+
+                <li><a href="{% url 'bookings' %}">Book a session</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="{% url 'index' %}">Home</a></li>
+
 
             </ul>
         </nav>
