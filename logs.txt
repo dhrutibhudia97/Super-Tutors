@@ -1,5 +1,3 @@
-There was an issue deploying your app. View the build log for details.
-
 -----> Building on the Heroku-22 stack
 -----> Using buildpack: heroku/python
 -----> Python app detected
@@ -10,8 +8,8 @@ There was an issue deploying your app. View the build log for details.
 -----> Installing pip 23.0.1, setuptools 63.4.3 and wheel 0.38.4
 -----> Installing SQLite3
 -----> Installing requirements with pip
-       Collecting asgiref==3.6.0
-         Downloading asgiref-3.6.0-py3-none-any.whl (23 kB)
+       Collecting asgiref==3.3.4
+         Downloading asgiref-3.3.4-py3-none-any.whl (22 kB)
        Collecting cloudinary==1.25.0
          Downloading cloudinary-1.25.0.tar.gz (167 kB)
          Preparing metadata (setup.py): started
@@ -20,36 +18,36 @@ There was an issue deploying your app. View the build log for details.
          Downloading dj_database_url-0.5.0-py2.py3-none-any.whl (5.5 kB)
        Collecting dj3-cloudinary-storage==0.0.5
          Downloading dj3_cloudinary_storage-0.0.5-py3-none-any.whl (18 kB)
-       Collecting Django==4.1.7
-         Downloading Django-4.1.7-py3-none-any.whl (8.1 MB)
-       Collecting django-allauth==0.53.1
-         Downloading django-allauth-0.53.1.tar.gz (736 kB)
+       Collecting Django==3.2.3
+         Downloading Django-3.2.3-py3-none-any.whl (7.9 MB)
+       Collecting django-allauth==0.44.0
+         Downloading django-allauth-0.44.0.tar.gz (572 kB)
          Preparing metadata (setup.py): started
          Preparing metadata (setup.py): finished with status 'done'
        Collecting django-crispy-forms==1.11.2
          Downloading django_crispy_forms-1.11.2-py3-none-any.whl (112 kB)
-       Collecting django-summernote==0.8.20.0
-         Downloading django-summernote-0.8.20.0.tar.gz (288 kB)
+       Collecting django-summernote==0.8.11.6
+         Downloading django-summernote-0.8.11.6.tar.gz (269 kB)
          Preparing metadata (setup.py): started
          Preparing metadata (setup.py): finished with status 'done'
        Collecting gunicorn==20.1.0
          Downloading gunicorn-20.1.0-py3-none-any.whl (79 kB)
-       Collecting oauthlib==3.2.2
-         Downloading oauthlib-3.2.2-py3-none-any.whl (151 kB)
-       Collecting psycopg2==2.9.5
-         Downloading psycopg2-2.9.5.tar.gz (384 kB)
+       Collecting oauthlib==3.1.1
+         Downloading oauthlib-3.1.1-py2.py3-none-any.whl (146 kB)
+       Collecting psycopg2==2.8.6
+         Downloading psycopg2-2.8.6.tar.gz (383 kB)
          Preparing metadata (setup.py): started
          Preparing metadata (setup.py): finished with status 'done'
-       Collecting PyJWT==2.6.0
-         Downloading PyJWT-2.6.0-py3-none-any.whl (20 kB)
+       Collecting PyJWT==2.1.0
+         Downloading PyJWT-2.1.0-py3-none-any.whl (16 kB)
        Collecting python3-openid==3.2.0
          Downloading python3_openid-3.2.0-py3-none-any.whl (133 kB)
        Collecting pytz==2021.1
          Downloading pytz-2021.1-py2.py3-none-any.whl (510 kB)
-       Collecting requests-oauthlib==1.3.1
-         Downloading requests_oauthlib-1.3.1-py2.py3-none-any.whl (23 kB)
-       Collecting sqlparse==0.4.3
-         Downloading sqlparse-0.4.3-py3-none-any.whl (42 kB)
+       Collecting requests-oauthlib==1.3.0
+         Downloading requests_oauthlib-1.3.0-py2.py3-none-any.whl (23 kB)
+       Collecting sqlparse==0.4.1
+         Downloading sqlparse-0.4.1-py3-none-any.whl (42 kB)
        Collecting six
          Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
        Collecting urllib3
@@ -58,18 +56,21 @@ There was an issue deploying your app. View the build log for details.
          Downloading certifi-2022.12.7-py3-none-any.whl (155 kB)
        Collecting requests>=2.25.1
          Downloading requests-2.28.2-py3-none-any.whl (62 kB)
-       Collecting bleach
-         Downloading bleach-6.0.0-py3-none-any.whl (162 kB)
+       Collecting pyjwt[crypto]>=1.7
+         Downloading PyJWT-2.6.0-py3-none-any.whl (20 kB)
        Collecting defusedxml
          Downloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
-       Collecting cryptography>=3.4.0
-         Downloading cryptography-40.0.1-cp36-abi3-manylinux_2_28_x86_64.whl (3.7 MB)
+       Collecting pyjwt[crypto]>=1.7
+         Downloading PyJWT-2.5.0-py3-none-any.whl (20 kB)
+         Downloading PyJWT-2.4.0-py3-none-any.whl (18 kB)
+         Downloading PyJWT-2.3.0-py3-none-any.whl (16 kB)
+         Downloading PyJWT-2.2.0-py3-none-any.whl (16 kB)
+       Collecting cryptography<4.0.0,>=3.3.1
+         Downloading cryptography-3.4.8-cp36-abi3-manylinux_2_24_x86_64.whl (3.0 MB)
        Collecting charset-normalizer<4,>=2
          Downloading charset_normalizer-3.1.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (197 kB)
        Collecting idna<4,>=2.5
          Downloading idna-3.4-py3-none-any.whl (61 kB)
-       Collecting webencodings
-         Downloading webencodings-0.5.1-py2.py3-none-any.whl (11 kB)
        Collecting cffi>=1.12
          Downloading cffi-1.15.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (462 kB)
        Collecting pycparser
@@ -77,65 +78,80 @@ There was an issue deploying your app. View the build log for details.
        Building wheels for collected packages: cloudinary, django-allauth, django-summernote, psycopg2
          Building wheel for cloudinary (setup.py): started
          Building wheel for cloudinary (setup.py): finished with status 'done'
-         Created wheel for cloudinary: filename=cloudinary-1.25.0-py3-none-any.whl size=133861 sha256=8cb5d6a241c2e9c514cf5ec70e5612864cb31525579dddece3eea22a5739ea40
-         Stored in directory: /tmp/pip-ephem-wheel-cache-hpbrxbai/wheels/ad/1c/90/6c3cab908b535dcaa3fdcf242a016e3eae055b8cdae324ec28
+         Created wheel for cloudinary: filename=cloudinary-1.25.0-py3-none-any.whl size=133861 sha256=d7ce7f2aba49541c0e092753b92650aa867f32e70961cbdd69ad8a3e70bcaccc
+         Stored in directory: /tmp/pip-ephem-wheel-cache-5b49un9_/wheels/ad/1c/90/6c3cab908b535dcaa3fdcf242a016e3eae055b8cdae324ec28
          Building wheel for django-allauth (setup.py): started
          Building wheel for django-allauth (setup.py): finished with status 'done'
-         Created wheel for django-allauth: filename=django_allauth-0.53.1-py3-none-any.whl size=1068859 sha256=31ad02bffed05bfbd51ba8cd7cc45fd1dce5e3e8245dc280c26336f2f8fe3f6a
-         Stored in directory: /tmp/pip-ephem-wheel-cache-hpbrxbai/wheels/9b/79/39/63270c87a60e57f5e8c50ff50443d5d4c6e05dabe5572e58a5
+         Created wheel for django-allauth: filename=django_allauth-0.44.0-py3-none-any.whl size=897452 sha256=a29d54773432756554c5b134b2e3d2605088b9cbb965f31eec388f347714bc55
+         Stored in directory: /tmp/pip-ephem-wheel-cache-5b49un9_/wheels/9e/6d/63/736844147a2d9259b91182cb7ab8aa795c505efec232c5a806
          Building wheel for django-summernote (setup.py): started
          Building wheel for django-summernote (setup.py): finished with status 'done'
-         Created wheel for django-summernote: filename=django_summernote-0.8.20.0-py3-none-any.whl size=352970 sha256=fb6326d39766c45776eacae81da390659672b9d7cccd33c4770e7d0cf6646aea
-         Stored in directory: /tmp/pip-ephem-wheel-cache-hpbrxbai/wheels/c1/63/dc/1605464d12d245567e460d101716cc72364066883b6d7942ff
+         Created wheel for django-summernote: filename=django_summernote-0.8.11.6-py3-none-any.whl size=369477 sha256=4e8463aa89f8b8922155dd1a5553d56654178e9e74cb65ebbe16495c3ded38f2
+         Stored in directory: /tmp/pip-ephem-wheel-cache-5b49un9_/wheels/4a/a6/e4/19d4be552ae69be49ea6a4ad3867df385b90cc3583ea5c54e8
          Building wheel for psycopg2 (setup.py): started
          Building wheel for psycopg2 (setup.py): finished with status 'done'
-         Created wheel for psycopg2: filename=psycopg2-2.9.5-cp311-cp311-linux_x86_64.whl size=159948 sha256=9df86e3b45b725248f7e1861274e8856212f3bf9d7165489159bb349d916bd57
-         Stored in directory: /tmp/pip-ephem-wheel-cache-hpbrxbai/wheels/41/69/c6/3d0a28861cf363402eab31679904dc0abba976d9d1c8810631
+         Created wheel for psycopg2: filename=psycopg2-2.8.6-cp311-cp311-linux_x86_64.whl size=147812 sha256=31373492594c422d52443220c9679b0a1b91749d967d6000d9c751c18290e892
+         Stored in directory: /tmp/pip-ephem-wheel-cache-5b49un9_/wheels/c5/15/c4/c4f53a2bd9538951fcecc425daf455f651e72443c091abcbf3
        Successfully built cloudinary django-allauth django-summernote psycopg2
-       Installing collected packages: webencodings, pytz, dj-database-url, urllib3, sqlparse, six, PyJWT, pycparser, psycopg2, oauthlib, idna, gunicorn, django-crispy-forms, defusedxml, charset-normalizer, certifi, asgiref, requests, python3-openid, Django, cloudinary, cffi, bleach, requests-oauthlib, django-summernote, dj3-cloudinary-storage, cryptography, django-allauth
-       Successfully installed Django-4.1.7 PyJWT-2.6.0 asgiref-3.6.0 bleach-6.0.0 certifi-2022.12.7 cffi-1.15.1 charset-normalizer-3.1.0 cloudinary-1.25.0 cryptography-40.0.1 defusedxml-0.7.1 dj-database-url-0.5.0 dj3-cloudinary-storage-0.0.5 django-allauth-0.53.1 django-crispy-forms-1.11.2 django-summernote-0.8.20.0 gunicorn-20.1.0 idna-3.4 oauthlib-3.2.2 psycopg2-2.9.5 pycparser-2.21 python3-openid-3.2.0 pytz-2021.1 requests-2.28.2 requests-oauthlib-1.3.1 six-1.16.0 sqlparse-0.4.3 urllib3-1.26.15 webencodings-0.5.1
+       Installing collected packages: pytz, dj-database-url, urllib3, sqlparse, six, PyJWT, pycparser, psycopg2, oauthlib, idna, gunicorn, django-crispy-forms, defusedxml, charset-normalizer, certifi, asgiref, requests, python3-openid, Django, cloudinary, cffi, requests-oauthlib, django-summernote, dj3-cloudinary-storage, cryptography, django-allauth
+       Successfully installed Django-3.2.3 PyJWT-2.1.0 asgiref-3.3.4 certifi-2022.12.7 cffi-1.15.1 charset-normalizer-3.1.0 cloudinary-1.25.0 cryptography-3.4.8 defusedxml-0.7.1 dj-database-url-0.5.0 dj3-cloudinary-storage-0.0.5 django-allauth-0.44.0 django-crispy-forms-1.11.2 django-summernote-0.8.11.6 gunicorn-20.1.0 idna-3.4 oauthlib-3.1.1 psycopg2-2.8.6 pycparser-2.21 python3-openid-3.2.0 pytz-2021.1 requests-2.28.2 requests-oauthlib-1.3.0 six-1.16.0 sqlparse-0.4.1 urllib3-1.26.15
 -----> $ python manage.py collectstatic --noinput
        Traceback (most recent call last):
-         File "/tmp/build_4a4b24dc/manage.py", line 21, in <module>
+         File "/tmp/build_325f9c1e/manage.py", line 21, in <module>
            main()
-         File "/tmp/build_4a4b24dc/manage.py", line 17, in main
+         File "/tmp/build_325f9c1e/manage.py", line 17, in main
            execute_from_command_line(sys.argv)
-         File "/app/.heroku/python/lib/python3.11/site-packages/django/core/management/__init__.py", line 446, in execute_from_command_line
+         File "/app/.heroku/python/lib/python3.11/site-packages/django/core/management/__init__.py", line 419, in execute_from_command_line
            utility.execute()
-         File "/app/.heroku/python/lib/python3.11/site-packages/django/core/management/__init__.py", line 440, in execute
-           self.fetch_command(subcommand).run_from_argv(self.argv)
-         File "/app/.heroku/python/lib/python3.11/site-packages/django/core/management/base.py", line 402, in run_from_argv
-           self.execute(*args, **cmd_options)
-         File "/app/.heroku/python/lib/python3.11/site-packages/django/core/management/base.py", line 448, in execute
-           output = self.handle(*args, **options)
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-         File "/app/.heroku/python/lib/python3.11/site-packages/django/contrib/staticfiles/management/commands/collectstatic.py", line 209, in handle
-           collected = self.collect()
-                       ^^^^^^^^^^^^^^
-         File "/app/.heroku/python/lib/python3.11/site-packages/django/contrib/staticfiles/management/commands/collectstatic.py", line 148, in collect
-           for original_path, processed_path, processed in processor:
-         File "/app/.heroku/python/lib/python3.11/site-packages/cloudinary_storage/storage.py", line 313, in post_process
-           for response in super(HashCloudinaryMixin, self).post_process(paths, dry_run, **options):
-         File "/app/.heroku/python/lib/python3.11/site-packages/django/contrib/staticfiles/storage.py", line 454, in post_process
-           yield from super().post_process(*args, **kwargs)
-         File "/app/.heroku/python/lib/python3.11/site-packages/django/contrib/staticfiles/storage.py", line 267, in post_process
-           for name, hashed_name, processed, _ in self._post_process(
-         File "/app/.heroku/python/lib/python3.11/site-packages/django/contrib/staticfiles/storage.py", line 338, in _post_process
-           content = pattern.sub(converter, content)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-         File "/app/.heroku/python/lib/python3.11/site-packages/django/contrib/staticfiles/storage.py", line 215, in converter
-           hashed_url = self._url(
-                        ^^^^^^^^^^
-         File "/app/.heroku/python/lib/python3.11/site-packages/django/contrib/staticfiles/storage.py", line 152, in _url
-           hashed_name = hashed_name_func(*args)
-                         ^^^^^^^^^^^^^^^^^^^^^^^
-         File "/app/.heroku/python/lib/python3.11/site-packages/django/contrib/staticfiles/storage.py", line 388, in _stored_name
-           cache_name = self.clean_name(self.hashed_name(name))
-                                        ^^^^^^^^^^^^^^^^^^^^^^
-         File "/app/.heroku/python/lib/python3.11/site-packages/cloudinary_storage/storage.py", line 284, in hashed_name
-           content = open(absolute_path, 'rb')
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^
-       TypeError: expected str, bytes or os.PathLike object, not NoneType
+         File "/app/.heroku/python/lib/python3.11/site-packages/django/core/management/__init__.py", line 395, in execute
+           django.setup()
+         File "/app/.heroku/python/lib/python3.11/site-packages/django/__init__.py", line 24, in setup
+           apps.populate(settings.INSTALLED_APPS)
+         File "/app/.heroku/python/lib/python3.11/site-packages/django/apps/registry.py", line 114, in populate
+           app_config.import_models()
+         File "/app/.heroku/python/lib/python3.11/site-packages/django/apps/config.py", line 301, in import_models
+           self.models_module = import_module(models_module_name)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         File "/app/.heroku/python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+           return _bootstrap._gcd_import(name[level:], package, level)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+         File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+         File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+         File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+         File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+         File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+         File "/app/.heroku/python/lib/python3.11/site-packages/django/contrib/auth/models.py", line 3, in <module>
+           from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
+         File "/app/.heroku/python/lib/python3.11/site-packages/django/contrib/auth/base_user.py", line 48, in <module>
+           class AbstractBaseUser(models.Model):
+         File "/app/.heroku/python/lib/python3.11/site-packages/django/db/models/base.py", line 122, in __new__
+           new_class.add_to_class('_meta', Options(meta, app_label))
+         File "/app/.heroku/python/lib/python3.11/site-packages/django/db/models/base.py", line 326, in add_to_class
+           value.contribute_to_class(cls, name)
+         File "/app/.heroku/python/lib/python3.11/site-packages/django/db/models/options.py", line 207, in contribute_to_class
+           self.db_table = truncate_name(self.db_table, connection.ops.max_name_length())
+                                                        ^^^^^^^^^^^^^^
+         File "/app/.heroku/python/lib/python3.11/site-packages/django/utils/connection.py", line 15, in __getattr__
+           return getattr(self._connections[self._alias], item)
+                          ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+         File "/app/.heroku/python/lib/python3.11/site-packages/django/utils/connection.py", line 62, in __getitem__
+           conn = self.create_connection(alias)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         File "/app/.heroku/python/lib/python3.11/site-packages/django/db/utils.py", line 204, in create_connection
+           backend = load_backend(db['ENGINE'])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+         File "/app/.heroku/python/lib/python3.11/site-packages/django/db/utils.py", line 111, in load_backend
+           return import_module('%s.base' % backend_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         File "/app/.heroku/python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+           return _bootstrap._gcd_import(name[level:], package, level)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         File "/app/.heroku/python/lib/python3.11/site-packages/django/db/backends/postgresql/base.py", line 25, in <module>
+           import psycopg2 as Database
+         File "/app/.heroku/python/lib/python3.11/site-packages/psycopg2/__init__.py", line 51, in <module>
+           from psycopg2._psycopg import (                     # noqa
+       SystemError: initialization of _psycopg raised unreported exception
  !     Error while running '$ python manage.py collectstatic --noinput'.
        See traceback above for details.
        You may need to update application code to resolve this error.
