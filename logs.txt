@@ -75,65 +75,54 @@
        Building wheels for collected packages: cloudinary, django-allauth, django-summernote, psycopg2
          Building wheel for cloudinary (setup.py): started
          Building wheel for cloudinary (setup.py): finished with status 'done'
-         Created wheel for cloudinary: filename=cloudinary-1.25.0-py3-none-any.whl size=133861 sha256=ebc3427ced97e3edb02ff082775545cd7d5796c461275813469a90dade141605
-         Stored in directory: /tmp/pip-ephem-wheel-cache-lnra54f7/wheels/ad/1c/90/6c3cab908b535dcaa3fdcf242a016e3eae055b8cdae324ec28
+         Created wheel for cloudinary: filename=cloudinary-1.25.0-py3-none-any.whl size=133861 sha256=d531f496a9ec881ade6c69a80b8faed5775ecc0eadc3676333a34d313c57c835
+         Stored in directory: /tmp/pip-ephem-wheel-cache-6ix4hviz/wheels/ad/1c/90/6c3cab908b535dcaa3fdcf242a016e3eae055b8cdae324ec28
          Building wheel for django-allauth (setup.py): started
          Building wheel for django-allauth (setup.py): finished with status 'done'
-         Created wheel for django-allauth: filename=django_allauth-0.53.1-py3-none-any.whl size=1068859 sha256=830b61b741b342ca49242d9a042ecff3aa3b533a0d78f8513ef091b543cad43f
-         Stored in directory: /tmp/pip-ephem-wheel-cache-lnra54f7/wheels/9b/79/39/63270c87a60e57f5e8c50ff50443d5d4c6e05dabe5572e58a5
+         Created wheel for django-allauth: filename=django_allauth-0.53.1-py3-none-any.whl size=1068859 sha256=bbb6c168e5bd53adfa1c7eeead2529c2a9da5f0963800d068dad69f36bbd6220
+         Stored in directory: /tmp/pip-ephem-wheel-cache-6ix4hviz/wheels/9b/79/39/63270c87a60e57f5e8c50ff50443d5d4c6e05dabe5572e58a5
          Building wheel for django-summernote (setup.py): started
          Building wheel for django-summernote (setup.py): finished with status 'done'
-         Created wheel for django-summernote: filename=django_summernote-0.8.20.0-py3-none-any.whl size=352970 sha256=d4c7bbf2837c16e0210ae16bb8bf3950161bfdbc7b495eb52aebc7bed8618b4c
-         Stored in directory: /tmp/pip-ephem-wheel-cache-lnra54f7/wheels/c1/63/dc/1605464d12d245567e460d101716cc72364066883b6d7942ff
+         Created wheel for django-summernote: filename=django_summernote-0.8.20.0-py3-none-any.whl size=352970 sha256=fe553b8fa6c238680503dfe059f4e1b01cfb36619464e63c76f093409d12bcb6
+         Stored in directory: /tmp/pip-ephem-wheel-cache-6ix4hviz/wheels/c1/63/dc/1605464d12d245567e460d101716cc72364066883b6d7942ff
          Building wheel for psycopg2 (setup.py): started
          Building wheel for psycopg2 (setup.py): finished with status 'done'
-         Created wheel for psycopg2: filename=psycopg2-2.9.5-cp311-cp311-linux_x86_64.whl size=159948 sha256=58a0ccd92e995fab3c7e5e78a05e9d3808afbc5598e2dcf431ef9e28a6af34dd
-         Stored in directory: /tmp/pip-ephem-wheel-cache-lnra54f7/wheels/41/69/c6/3d0a28861cf363402eab31679904dc0abba976d9d1c8810631
+         Created wheel for psycopg2: filename=psycopg2-2.9.5-cp311-cp311-linux_x86_64.whl size=159948 sha256=1931bc4e0bb964c9068459ebfad44c129ec5596cdfd1a42697e9b65e40067754
+         Stored in directory: /tmp/pip-ephem-wheel-cache-6ix4hviz/wheels/41/69/c6/3d0a28861cf363402eab31679904dc0abba976d9d1c8810631
        Successfully built cloudinary django-allauth django-summernote psycopg2
        Installing collected packages: webencodings, pytz, dj-database-url, urllib3, sqlparse, six, PyJWT, pycparser, psycopg2, oauthlib, idna, gunicorn, django-crispy-forms, defusedxml, charset-normalizer, certifi, asgiref, requests, python3-openid, Django, cloudinary, cffi, bleach, requests-oauthlib, django-summernote, dj3-cloudinary-storage, cryptography, django-allauth
        Successfully installed Django-4.1.7 PyJWT-2.6.0 asgiref-3.6.0 bleach-6.0.0 certifi-2022.12.7 cffi-1.15.1 charset-normalizer-3.1.0 cloudinary-1.25.0 cryptography-40.0.1 defusedxml-0.7.1 dj-database-url-0.5.0 dj3-cloudinary-storage-0.0.5 django-allauth-0.53.1 django-crispy-forms-1.11.2 django-summernote-0.8.20.0 gunicorn-20.1.0 idna-3.4 oauthlib-3.2.2 psycopg2-2.9.5 pycparser-2.21 python3-openid-3.2.0 pytz-2021.1 requests-2.28.2 requests-oauthlib-1.3.1 six-1.16.0 sqlparse-0.4.3 urllib3-1.26.15 webencodings-0.5.1
 -----> $ python manage.py collectstatic --noinput
        Traceback (most recent call last):
-         File "/tmp/build_ea14a40c/manage.py", line 21, in <module>
+         File "/tmp/build_b9a24af1/manage.py", line 21, in <module>
            main()
-         File "/tmp/build_ea14a40c/manage.py", line 17, in main
+         File "/tmp/build_b9a24af1/manage.py", line 17, in main
            execute_from_command_line(sys.argv)
          File "/app/.heroku/python/lib/python3.11/site-packages/django/core/management/__init__.py", line 446, in execute_from_command_line
            utility.execute()
-         File "/app/.heroku/python/lib/python3.11/site-packages/django/core/management/__init__.py", line 440, in execute
-           self.fetch_command(subcommand).run_from_argv(self.argv)
-         File "/app/.heroku/python/lib/python3.11/site-packages/django/core/management/base.py", line 402, in run_from_argv
-           self.execute(*args, **cmd_options)
-         File "/app/.heroku/python/lib/python3.11/site-packages/django/core/management/base.py", line 448, in execute
-           output = self.handle(*args, **options)
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-         File "/app/.heroku/python/lib/python3.11/site-packages/django/contrib/staticfiles/management/commands/collectstatic.py", line 209, in handle
-           collected = self.collect()
-                       ^^^^^^^^^^^^^^
-         File "/app/.heroku/python/lib/python3.11/site-packages/django/contrib/staticfiles/management/commands/collectstatic.py", line 148, in collect
-           for original_path, processed_path, processed in processor:
-         File "/app/.heroku/python/lib/python3.11/site-packages/cloudinary_storage/storage.py", line 313, in post_process
-           for response in super(HashCloudinaryMixin, self).post_process(paths, dry_run, **options):
-         File "/app/.heroku/python/lib/python3.11/site-packages/django/contrib/staticfiles/storage.py", line 454, in post_process
-           yield from super().post_process(*args, **kwargs)
-         File "/app/.heroku/python/lib/python3.11/site-packages/django/contrib/staticfiles/storage.py", line 267, in post_process
-           for name, hashed_name, processed, _ in self._post_process(
-         File "/app/.heroku/python/lib/python3.11/site-packages/django/contrib/staticfiles/storage.py", line 338, in _post_process
-           content = pattern.sub(converter, content)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-         File "/app/.heroku/python/lib/python3.11/site-packages/django/contrib/staticfiles/storage.py", line 215, in converter
-           hashed_url = self._url(
-                        ^^^^^^^^^^
-         File "/app/.heroku/python/lib/python3.11/site-packages/django/contrib/staticfiles/storage.py", line 152, in _url
-           hashed_name = hashed_name_func(*args)
-                         ^^^^^^^^^^^^^^^^^^^^^^^
-         File "/app/.heroku/python/lib/python3.11/site-packages/django/contrib/staticfiles/storage.py", line 388, in _stored_name
-           cache_name = self.clean_name(self.hashed_name(name))
-                                        ^^^^^^^^^^^^^^^^^^^^^^
-         File "/app/.heroku/python/lib/python3.11/site-packages/cloudinary_storage/storage.py", line 284, in hashed_name
-           content = open(absolute_path, 'rb')
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^
-       TypeError: expected str, bytes or os.PathLike object, not NoneType
+         File "/app/.heroku/python/lib/python3.11/site-packages/django/core/management/__init__.py", line 386, in execute
+           settings.INSTALLED_APPS
+         File "/app/.heroku/python/lib/python3.11/site-packages/django/conf/__init__.py", line 92, in __getattr__
+           self._setup(name)
+         File "/app/.heroku/python/lib/python3.11/site-packages/django/conf/__init__.py", line 79, in _setup
+           self._wrapped = Settings(settings_module)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^
+         File "/app/.heroku/python/lib/python3.11/site-packages/django/conf/__init__.py", line 190, in __init__
+           mod = importlib.import_module(self.SETTINGS_MODULE)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         File "/app/.heroku/python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+           return _bootstrap._gcd_import(name[level:], package, level)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+         File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+         File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+         File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+         File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+         File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+         File "/tmp/build_b9a24af1/bookingsessions/settings.py", line 57, in <module>
+           messages.DEBUG: 'alert-info',
+           ^^^^^^^^
+       NameError: name 'messages' is not defined
  !     Error while running '$ python manage.py collectstatic --noinput'.
        See traceback above for details.
        You may need to update application code to resolve this error.
