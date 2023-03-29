@@ -30,22 +30,17 @@ I used the project board on GitHub to help plan for this project and documented 
 ![projectboard](https://user-images.githubusercontent.com/107180641/228549958-cb9d1aa9-f1b0-4967-81c3-88ee13e0ece0.png)
 
  
- ### **As a general non-account holding user**
- - See services available
- - See reviews
- - See location of the tutor centre
- - Submit a query and receive an email response
- - Create an account
+ 
 
- ### **As an account holding user**
- - I can do everything a general non-acount holding user can
- - Login and logout of my account
- - Book tuition sessions
- - See my booked tuition sessions
- - Cancel my tuition sessions
+## Validators
 
-### **As an admin (website creator) user**
-- I can do everything that an account holding user can
-- I can delete other peoples tuition sessions (optional)
+CSS Validator
+![css validator](https://user-images.githubusercontent.com/107180641/228589071-ce2a7b25-0375-4ebf-8d39-57e8c79b674e.png)
+
+JavaScript Validator 
+![javascript map validator](https://user-images.githubusercontent.com/107180641/228591567-678e8123-ba2a-4063-8f3d-70bed138b113.png)
+
+![javascript emailjs validator](https://user-images.githubusercontent.com/107180641/228591683-2d93a6d2-e291-46e4-9f8b-ffea4616a53d.png)
+
 
 
