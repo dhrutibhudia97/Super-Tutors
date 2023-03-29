@@ -12,4 +12,3 @@ urlpatterns = [
     path('submitupdatebooking/<int:id>', views.submitupdatebooking, name='submitupdatebooking'),
     path('deletebooking/<int:id>', views.deletebooking, name='deletebooking'),
 ]
-
