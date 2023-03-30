@@ -6,23 +6,23 @@ This project "Super Tutors" was to build a platform for teenagers to book sessio
 ## User Stories
 
 ### As a User
-- [x] See the services available
-- [x] See the location of the tutor
-- [x] Submit a query and receive an email response
-- [x] Create an account
-- [x] Log in and Log out of my account
-- [x] Book a tuition session
-- [x] Cancel my tuition session
-- [x] Edit my previously booked tuition session
-- [ ] Only see my future booked sessions
+[x] See the services available
+[x] See the location of the tutor
+[x] Submit a query and receive an email response
+[x] Create an account
+[x] Log in and Log out of my account
+[x] Book a tuition session
+[x] Cancel my tuition session
+[x] Edit my previously booked tuition session
+[ ] Only see my future booked sessions
 
 ### As an Admin User
-- [x] Log in and Log out of my account
-- [x] View all tuition sessions booked by all users
-- [x] Edit other peoples tuition sessions
-- [x] Delete other peoples tuition sessions
-- [x] Receive queries that website viewers have submitted. They should receive an automated response.
-- [ ] Only see the future sessions that are booked (not past sessions)
+[x] Log in and Log out of my account
+[x] View all tuition sessions booked by all users
+[x] Edit other peoples tuition sessions
+[x] Delete other peoples tuition sessions
+[x] Receive queries that website viewers have submitted. They should receive an automated response.
+[ ] Only see the future sessions that are booked (not past sessions)
 
 ### Project Board
 
@@ -31,21 +31,86 @@ I used the project board on GitHub to help plan for this project and documented 
 ![projectboard](https://user-images.githubusercontent.com/107180641/228549958-cb9d1aa9-f1b0-4967-81c3-88ee13e0ece0.png)
 
  
-## Testing 
-1. User able to view the websites homepage and contact page without logging in.
-2. User able to find location of the tuition centre using google maps
+## Testing / Features 
+1. User can view the website's homepage and contact page without logging in.
+
+![homepage](https://user-images.githubusercontent.com/107180641/228746860-e1cea223-d14b-4758-bb13-670dacbb1592.png)
+
+2. User is able to find location of the tuition centre using google maps
+
+![contact page](https://user-images.githubusercontent.com/107180641/228746855-baca7259-f07b-4960-bd19-0bf905be5d17.png)
+
 3. User able to send a query to the tutors through the submit your queries section and receive an automated reply.
-4. User is able to sign up for an account
-5. User able to log in to their existing account
-6. User able to log out of their account.
-7. User able to book a tuition session
-8. User able to view the sessions they have booked
-9. User able to Edit their tuition sessions (if it is not within the next 2 days)
-10. User able to Delete their tuition sessions
-11. User notified if they cannot book a session for a certain date or time.
-12. Admin able to login in and access database
-13. Admin able to see all users and bookings
-14. Admin able to delete and edit anyones bookings
+
+![submit query](https://user-images.githubusercontent.com/107180641/228746867-b46f5b59-585e-4625-a1ce-c3e63e8a7710.png)
+
+![query received by company](https://user-images.githubusercontent.com/107180641/228746864-2b5b762c-c180-41f6-89ef-a35948a93efe.png)
+
+![automated response](https://user-images.githubusercontent.com/107180641/228746865-d038103b-cb46-4718-a273-96827463e77a.png)
+
+4. User cannot access book a session page when not logged in.
+
+![not logged in](https://user-images.githubusercontent.com/107180641/228746870-8f7b7dc7-794b-40ea-8c7b-88b90f3982a6.png)
+
+5. User can sign up for an account
+
+![signing up](https://user-images.githubusercontent.com/107180641/228747859-27b97715-ef71-4c49-b0b4-1e2a7cb19308.png)
+
+![signed up](https://user-images.githubusercontent.com/107180641/228747853-f4efc664-1a76-42bc-8717-49ad2acb6ffa.png)
+
+6. User able to log in to their existing account
+
+![logging in](https://user-images.githubusercontent.com/107180641/228747862-b342e461-e9a0-4422-9248-69381065f8ef.png)
+
+![logged in](https://user-images.githubusercontent.com/107180641/228747861-c3532c1c-d58f-4998-808f-babb06f7bfc2.png)
+
+7. User able to log out of their account.
+
+![signing out](https://user-images.githubusercontent.com/107180641/228747868-be9a2c54-49ea-4b02-9bc8-5fe68700cddb.png)
+
+![signed out](https://user-images.githubusercontent.com/107180641/228747864-6e2d5013-be92-463f-9284-95ed7b734cc4.png)
+
+8. User able to book a tuition session
+
+![booking 1](https://user-images.githubusercontent.com/107180641/228748606-6f02afb2-8222-4a5e-8032-20510939b05e.png)
+
+![booking 2](https://user-images.githubusercontent.com/107180641/228748625-71e738a3-a58f-4652-890d-b01749bd350f.png)
+
+![booking 3](https://user-images.githubusercontent.com/107180641/228748623-a27ee599-59aa-4d86-9c8b-c54750e33403.png)
+
+9. User able to view the sessions they have booked
+
+![edit 3](https://user-images.githubusercontent.com/107180641/228748616-c002d448-58d8-446b-8c8e-28d7a96471b1.png)
+
+10. User able to Edit their tuition sessions (if it is not within the next 2 days)
+
+![edit 1](https://user-images.githubusercontent.com/107180641/228748619-3bf62004-0e93-4da0-82ff-441a7bb68ed6.png)
+
+![edit 2](https://user-images.githubusercontent.com/107180641/228748618-318e06a0-6383-43bd-9930-0243704e1657.png)
+
+![cannot edit within 2 days range of session](https://user-images.githubusercontent.com/107180641/228748610-5b2616de-59fa-4656-9178-abd57b3620c8.png)
+
+11. User able to Delete their tuition sessions
+
+![delete](https://user-images.githubusercontent.com/107180641/228748612-ebad47f6-a396-4a20-8014-d3262bcb61f3.png)
+
+12. User notified if they cannot book a session for a certain date or time.
+
+![restrictions in booking](https://user-images.githubusercontent.com/107180641/228750102-334736e8-35b7-4a3e-a7ef-23691622fd0f.png)
+
+13. Admin able to login in and access database
+
+![admin 1](https://user-images.githubusercontent.com/107180641/228749573-f516fda7-e3bd-41c4-ac01-909657cf4836.png)
+
+14. Admin able to see all users and bookings
+
+![admin 2](https://user-images.githubusercontent.com/107180641/228749571-b6863f87-2189-443c-855b-563dc80a1c71.png)
+
+15. Admin able to delete and edit anyones bookings
+
+![admin 3](https://user-images.githubusercontent.com/107180641/228749576-07ad53f7-208e-47ac-8305-c2be840f0e54.png)
+
+![admin edit](https://user-images.githubusercontent.com/107180641/228749574-4ff18c9d-b984-4716-8ca7-e3b460a529e2.png)
 
 
 ## Validators
@@ -55,7 +120,6 @@ CSS Validator
 
 JavaScript Validator 
 ![javascript map validator](https://user-images.githubusercontent.com/107180641/228591567-678e8123-ba2a-4063-8f3d-70bed138b113.png)
-
 ![javascript emailjs validator](https://user-images.githubusercontent.com/107180641/228591683-2d93a6d2-e291-46e4-9f8b-ffea4616a53d.png)
 
 
