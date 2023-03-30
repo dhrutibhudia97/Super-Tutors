@@ -260,16 +260,18 @@ def submitupdatebooking(request, id):
 
 
 def stringDay(futureDates):
-     """ Turns dates from number format to string format, for easier viewing. """
+    """Turns dates from number format to string format, for easier viewing."""
     t = datetime.strptime(futureDates, "%Y-%m-%d")
     d = t.strftime("%A")
     return d
 
 
 def availableDate(days):
-     """ When selecting dates only dates within the next 2 weeks
-     are displayed. If a thursday is selected users will be notified
-     to pick another date as the centre is closed on thursday. """
+    """ 
+    When selecting dates only dates within the next 2 weeks
+    are displayed. If a thursday is selected users will be notified
+    to pick another date as the centre is closed on thursday. 
+    """
     today = datetime.now()
     days = []
     for i in range(0, 15):
@@ -280,10 +282,10 @@ def availableDate(days):
 
 
 def isDateValid(futureDates):
-     """ 
-     Checks if the dates selected by the user are within the
-     next two weeks.
-     """
+    """
+    Checks if the dates selected by the user are within the
+    next two weeks.
+    """
     validateDates = []
     for a in futureDates:
         if Bookingtuition.objects.filter(day=a).count() < 13:
@@ -292,7 +294,7 @@ def isDateValid(futureDates):
 
 
 def checkTime(times, day):
-     """ Checks which time of the day are available to be booked. """
+    """ Checks which time of the day are available to be booked. """
     futureDates = []
     for o in times:
         if Bookingtuition.objects.filter(day=day, time_choice=o).count() < 1:
@@ -301,10 +303,10 @@ def checkTime(times, day):
 
 
 def checkEditTime(times, day, id):
-     """
-     When users are editing their sessions it
-     checks which time of the day is free to book.
-     """
+    """
+    When users are editing their sessions it
+    checks which time of the day is free to book.
+    """
     futureDates = []
     bookingtuition = Bookingtuition.objects.get(pk=id)
     time_choice = bookingtuition.time_choice
