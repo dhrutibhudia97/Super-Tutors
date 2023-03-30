@@ -7,14 +7,21 @@ from datetime import datetime, timedelta
 
 
 def index(request):
+    """Renders the home page."""
     return render(request, "index.html", {})
 
 
 def contact(request):
+    """Renders the contact page."""
     return render(request, "contact.html", {})
 
 
 def bookings(request):
+    """
+    Gets the next 14 valid days from today. 
+    User than chooses the tuition type and date.
+    They are then redirected to the submitbooking page.
+    """
     days = availableDate(15)
     validateDates = isDateValid(days)
 
@@ -42,6 +49,14 @@ def bookings(request):
 
 
 def submitbooking(request):
+    """
+    It gets the date and tuition type chosen from previous page.
+    User then picks from the time available for this specific day.
+    If the date and time they have chosen are not valid for any
+    reason they we be notified and need to pick another option.
+    If they successfully book an appointment they will be redirected to
+    user view where they can see the appoint details.
+    """
     user = request.user
     times = ["4-5 PM", "5-6 PM", "6-7 PM", "7-8 PM", "8-9 PM"]
     today = datetime.today()
@@ -101,6 +116,7 @@ def submitbooking(request):
 
 
 def userview(request):
+    """ User can view the sessions they have booked. """
     user = request.user
     sessionsbooked = Bookingtuition.objects.filter(user=user).order_by(
         "day", "time_choice"
@@ -116,6 +132,7 @@ def userview(request):
 
 
 def deletebooking(request, id):
+    """ User can delete the sessions they have previously booked. """
     bookingtuition = Bookingtuition.objects.get(pk=id)
     bookingtuition.delete()
     messages.success(request, "Tuition session was deleted.")
@@ -123,6 +140,12 @@ def deletebooking(request, id):
 
 
 def updatebooking(request, id):
+    """ 
+    User can edit their previously booked sessions.
+    But only if it not within 2 days of the session.
+    They can change the tuition type and 
+    date (within the next 2 weeks).
+    """
     bookingtuition = Bookingtuition.objects.get(pk=id)
     bookedDate = bookingtuition.day
 
@@ -157,6 +180,14 @@ def updatebooking(request, id):
 
 
 def submitupdatebooking(request, id):
+    """
+    It gets the date and tuition type chosen from previous page are
+    valid the user then picks from the time available for this specific 
+    day that are available. If the date and time they have chosen are not valid for any
+    reason they we be notified and need to pick another option.
+    If they successfully edit their appointment they will be redirected to
+    user view where they can see the appoint details.
+    """
     user = request.user
     times = ["4-5 PM", "5-6 PM", "6-7 PM", "7-8 PM", "8-9 PM"]
     today = datetime.today()
@@ -229,12 +260,16 @@ def submitupdatebooking(request, id):
 
 
 def stringDay(futureDates):
+     """ Turns dates from number format to string format, for easier viewing. """
     t = datetime.strptime(futureDates, "%Y-%m-%d")
     d = t.strftime("%A")
     return d
 
 
 def availableDate(days):
+     """ When selecting dates only dates within the next 2 weeks
+     are displayed. If a thursday is selected users will be notified
+     to pick another date as the centre is closed on thursday. """
     today = datetime.now()
     days = []
     for i in range(0, 15):
@@ -245,6 +280,10 @@ def availableDate(days):
 
 
 def isDateValid(futureDates):
+     """ 
+     Checks if the dates selected by the user are within the
+     next two weeks.
+     """
     validateDates = []
     for a in futureDates:
         if Bookingtuition.objects.filter(day=a).count() < 13:
@@ -253,6 +292,7 @@ def isDateValid(futureDates):
 
 
 def checkTime(times, day):
+     """ Checks which time of the day are available to be booked. """
     futureDates = []
     for o in times:
         if Bookingtuition.objects.filter(day=day, time_choice=o).count() < 1:
@@ -261,6 +301,10 @@ def checkTime(times, day):
 
 
 def checkEditTime(times, day, id):
+     """
+     When users are editing their sessions it
+     checks which time of the day is free to book.
+     """
     futureDates = []
     bookingtuition = Bookingtuition.objects.get(pk=id)
     time_choice = bookingtuition.time_choice

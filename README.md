@@ -167,6 +167,7 @@ HTML Validator
   - Error in views.py file, "!=" used instead of "is not" as a comparison as this raised a syntax error.
 - HTML errors, mainly due to formatting of static files {% static css/stylesheet.css %}, but this is how you connect the files so nothing can be done.
 - User issue, Even though you cannot edit your appointment within two days of the appointment, you can delete the appointment.
+- Admin pages not connected to CSS files.
 
 
 ## Credits
