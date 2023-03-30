@@ -1,28 +1,30 @@
 # Super Tutors
-[insert image of different screens on different devices...]
 
-This project "Super Tutors" was to build a platform for teenagers to book sessions for science tuition. This allows the user to booking tuition sessions that take place at a tuition system in Wembley. They can book their sessions by choosing the tuition type, date and time. They can only book sessions that are available within the next two weeks and are unable to edit their appointments last minute (within 2 days of the appointment). The user able to booking, read, edit and cancel their booking sessions. The admin user is able to see all of the tuition books that have been made by the different users and is also able to edit and delete them.
+![responsive design](https://user-images.githubusercontent.com/107180641/228759901-cb04e3bf-c9e4-4869-a1e0-2d4d68071e3c.png)
+
+
+This project "Super Tutors" was to build a platform for teenagers or their parents to book sessions for science tuition. This allows the user to book tuition sessions that take place at a tuition centre in Wembley. They can book their sessions by choosing the tuition type, date and time. They can only book sessions that are available within the next two weeks and are unable to edit their appointments last minute (within 2 days of the appointment). The user can book, read, edit, and cancel their booked sessions. The admin user can see all of the tuition sessions that have been booked by the different users and is also able to edit and delete them.
 
 ## User Stories
 
 ### As a User
-[x] See the services available
-[x] See the location of the tutor
-[x] Submit a query and receive an email response
-[x] Create an account
-[x] Log in and Log out of my account
-[x] Book a tuition session
-[x] Cancel my tuition session
-[x] Edit my previously booked tuition session
-[ ] Only see my future booked sessions
+- [x] See the services available
+- [x] See the location of the tutor
+- [x] Submit a query and receive an email response
+- [x] Create an account
+- [x] Log in and Log out of my account
+- [x] Book a tuition session
+- [x] Cancel my tuition session
+- [x] Edit my previously booked tuition session
+- [ ] Only see my future booked sessions
 
 ### As an Admin User
-[x] Log in and Log out of my account
-[x] View all tuition sessions booked by all users
-[x] Edit other peoples tuition sessions
-[x] Delete other peoples tuition sessions
-[x] Receive queries that website viewers have submitted. They should receive an automated response.
-[ ] Only see the future sessions that are booked (not past sessions)
+- [x] Log in and Log out of my account
+- [x] View all tuition sessions booked by all users
+- [x] Edit other peoples tuition sessions
+- [x] Delete other peoples tuition sessions
+- [x] Receive queries that website viewers have submitted. They should receive an automated response.
+- [ ] Only see the future sessions that are booked (not past sessions)
 
 ### Project Board
 
@@ -31,7 +33,7 @@ I used the project board on GitHub to help plan for this project and documented 
 ![projectboard](https://user-images.githubusercontent.com/107180641/228549958-cb9d1aa9-f1b0-4967-81c3-88ee13e0ece0.png)
 
  
-## Testing / Features 
+## Manual Testing / Features 
 1. User can view the website's homepage and contact page without logging in.
 
 ![homepage](https://user-images.githubusercontent.com/107180641/228746860-e1cea223-d14b-4758-bb13-670dacbb1592.png)
@@ -116,17 +118,21 @@ I used the project board on GitHub to help plan for this project and documented 
 ## Validators
 
 CSS Validator
+
 ![css validator](https://user-images.githubusercontent.com/107180641/228589071-ce2a7b25-0375-4ebf-8d39-57e8c79b674e.png)
 
 JavaScript Validator 
+
 ![javascript map validator](https://user-images.githubusercontent.com/107180641/228591567-678e8123-ba2a-4063-8f3d-70bed138b113.png)
 ![javascript emailjs validator](https://user-images.githubusercontent.com/107180641/228591683-2d93a6d2-e291-46e4-9f8b-ffea4616a53d.png)
 
 
 Python Validator
+
 ![python validators merged](https://user-images.githubusercontent.com/107180641/228680256-17dce3c4-0468-408f-8721-f37fb175cedd.png)
 
 HTML Validator
+
 ![html validator merged](https://user-images.githubusercontent.com/107180641/228687233-fa1e427e-98a3-403f-a43d-7b659c2735c9.png)
 
 
@@ -155,9 +161,21 @@ HTML Validator
 
 
 ## Deployment
+1. On the Heroku dashboard select "create new app", app called "booking-tutor-sessions"
+2. Add Buildpack: heroku/python
+3. Add Config Vars:[PORT:8000], [SECRET_KEY:*******], [HEROKU_POSTGRESQL_CHARCOAL_URL:postgress://....], [DISABLE_COLLECTSTATIC:1], [DATABASE_URL:postgress://....], [CLOUDINARY_URL:cloudinary://...]   
+4. Linked the Heruko app to the GitHub repository "Super-Tutors"
+5. Clicked on "Manually Deploy"
+
+live link to website: https://booking-tutor-sessions.herokuapp.com/
 
 
 ## Cloning
+1. On GitHub on the main page of this repository, on the top right click "Code"
+2. Click "local" tab
+3. Copy the URL link
+4. Where you want to clone the file, use command "git clone" and pass through the URL
+5. Complete code should now be available on your local system for you to edit
 
 
 ## Known Errors

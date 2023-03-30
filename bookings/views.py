@@ -50,7 +50,7 @@ def bookings(request):
 
 def submitbooking(request):
     """
-    It gets the date and tuition type chosen from previous page.
+    It gets the date and tuition type chosen from the previous page.
     User then picks from the time available for this specific day.
     If the date and time they have chosen are not valid for any
     reason they we be notified and need to pick another option.
@@ -142,9 +142,9 @@ def deletebooking(request, id):
 def updatebooking(request, id):
     """ 
     User can edit their previously booked sessions.
-    But only if it not within 2 days of the session.
+    But only if it is not within 2 days of the session.
     They can change the tuition type and 
-    date (within the next 2 weeks).
+    date (if it is within the next 2 weeks).
     """
     bookingtuition = Bookingtuition.objects.get(pk=id)
     bookedDate = bookingtuition.day
@@ -181,9 +181,9 @@ def updatebooking(request, id):
 
 def submitupdatebooking(request, id):
     """
-    It gets the date and tuition type chosen from previous page are
-    valid the user then picks from the time available for this specific 
-    day that are available. If the date and time they have chosen are not valid for any
+    It gets the date and tuition type chosen from the previous page if it is
+    valid the user then picks from the times available for this specific 
+    day. If the date and time they have chosen are not valid for any
     reason they we be notified and need to pick another option.
     If they successfully edit their appointment they will be redirected to
     user view where they can see the appoint details.
@@ -260,7 +260,10 @@ def submitupdatebooking(request, id):
 
 
 def stringDay(futureDates):
-    """Turns dates from number format to string format, for easier viewing."""
+    """
+    Turns dates from number format to string format, for easier viewing.
+    Credit to: https://blog.devgenius.io/django-tutorial-on-how-to-create-a-booking-system-for-a-health-clinic-9b1920fc2b78
+    """
     t = datetime.strptime(futureDates, "%Y-%m-%d")
     d = t.strftime("%A")
     return d
@@ -268,9 +271,9 @@ def stringDay(futureDates):
 
 def availableDate(days):
     """ 
-    When selecting dates only dates within the next 2 weeks
-    are displayed. If a thursday is selected users will be notified
-    to pick another date as the centre is closed on thursday. 
+    When selecting a date only dates within the next 2 weeks
+    are displayed. If a Thursday is selected users will be notified
+    to pick another date as the centre is closed on Thursday. 
     """
     today = datetime.now()
     days = []
@@ -284,7 +287,7 @@ def availableDate(days):
 def isDateValid(futureDates):
     """
     Checks if the dates selected by the user are within the
-    next two weeks.
+    next 2 weeks.
     """
     validateDates = []
     for a in futureDates:
@@ -305,7 +308,7 @@ def checkTime(times, day):
 def checkEditTime(times, day, id):
     """
     When users are editing their sessions it
-    checks which time of the day is free to book.
+    checks which time of the day are available to be booked.
     """
     futureDates = []
     bookingtuition = Bookingtuition.objects.get(pk=id)
