@@ -102,17 +102,22 @@ I used the project board on GitHub to help plan for this project and documented 
 
 13. Admin able to login in and access database
 
-![admin 1](https://user-images.githubusercontent.com/107180641/228749573-f516fda7-e3bd-41c4-ac01-909657cf4836.png)
+![admin a](https://user-images.githubusercontent.com/107180641/228788912-210be9fe-60a6-49e3-9024-52271a572662.png)
+
+![admin b](https://user-images.githubusercontent.com/107180641/228788902-cea911f8-06e7-4820-b892-ba2c179254ca.png)
 
 14. Admin able to see all users and bookings
 
-![admin 2](https://user-images.githubusercontent.com/107180641/228749571-b6863f87-2189-443c-855b-563dc80a1c71.png)
+![admin c](https://user-images.githubusercontent.com/107180641/228788923-0797af65-1622-47c4-8a3b-e535f30379a3.png)
+
+![admin d](https://user-images.githubusercontent.com/107180641/228788922-0697f9f8-9028-4dbf-b179-deb4062ab1e4.png)
 
 15. Admin able to delete and edit anyones bookings
 
-![admin 3](https://user-images.githubusercontent.com/107180641/228749576-07ad53f7-208e-47ac-8305-c2be840f0e54.png)
+![admin e](https://user-images.githubusercontent.com/107180641/228788918-59dedef4-fc49-4e82-b94e-dfcf99a525a8.png)
 
-![admin edit](https://user-images.githubusercontent.com/107180641/228749574-4ff18c9d-b984-4716-8ca7-e3b460a529e2.png)
+![admin f](https://user-images.githubusercontent.com/107180641/228788916-c84e9286-4efe-4f6f-bf5b-f2195c299173.png)
+
 
 
 ## Validators
@@ -185,7 +190,7 @@ live link to website: https://booking-tutor-sessions.herokuapp.com/
   - Error in views.py file, "!=" used instead of "is not" as a comparison as this raised a syntax error.
 - HTML errors, mainly due to formatting of static files {% static css/stylesheet.css %}, but this is how you connect the files so nothing can be done.
 - User issue, Even though you cannot edit your appointment within two days of the appointment, you can delete the appointment.
-- Admin pages not connected to CSS files.
+
 
 
 ## Credits
